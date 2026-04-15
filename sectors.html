@@ -52,7 +52,7 @@ a { text-decoration: none; color: inherit; }
 
 .stat-box { text-align: center; padding: 32px 20px; background: var(--bg2); border-radius: 12px; border: 1px solid var(--bdr); }
 .stat-number { font-size: 42px; font-weight: 700; color: var(--ac); line-height: 1; margin-bottom: 8px; }
-.stat-label { font-size: 13px; color: var(--txM); font-weight: 500; }
+.stat-label { font-size: 13px; color: var(--txM); font-weight: 500; display: none; }
 
 /* Nav */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all 0.3s ease; background: rgba(245,246,248,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid transparent; }
@@ -138,36 +138,12 @@ a { text-decoration: none; color: inherit; }
 </section>
 
 <!-- STATS -->
-<section style="padding: 0 0 80px; background: var(--bg);">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-      <div class="stat-box">
-        <div class="stat-number">100+</div>
-        <div class="stat-label">Projects Delivered</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">50+</div>
-        <div class="stat-label">Grid Connections</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">15+</div>
-        <div class="stat-label">Industry Clients</div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- IMAGE BREAK -->
 <section style="padding: 0 0 80px; background: var(--bg);">
   <div class="container">
-    <div class="image-placeholder">
-      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/><circle cx="12" cy="12" r="3"/></svg>
-      <span>UK Power Network Infrastructure</span>
-    </div>
+    <div style="width:100%;border-radius:12px;overflow:hidden;margin-bottom:40px;"><img src="sectors-image.jpg" alt="UK Power Network" style="width:100%;height:280px;object-fit:cover;border-radius:12px;"></div>
   </div>
 </section>
 
