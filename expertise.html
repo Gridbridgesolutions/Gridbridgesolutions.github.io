@@ -121,26 +121,103 @@ a { text-decoration: none; color: inherit; }
 <!-- PLATFORMS SECTION -->
 <section class="section section-alt">
   <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 44px;">
+    <div style="margin-bottom: 44px;">
+      <div class="label" style="margin-bottom: 14px;"><span class="label-line"></span>Industry-Standard Tools</div>
+      <h2 class="heading">Our Modelling Platforms</h2>
+      <p class="body-text">We maintain deep expertise across the leading power system simulation platforms used by DNOs, TO, generators, and developers across the UK grid. Each platform offers distinct capabilities for different study types.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
       
-      <div class="pcard">
-        <div style="font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--hd); line-height: 1.35; margin-bottom: 8px;">DIgSILENT<br>PowerFactory</div>
-        <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--ac); text-transform: uppercase;">RMS & EMT Simulation</div>
+      <div style="background: var(--bg2); border: 1px solid var(--bdr); border-radius: 10px; padding: 32px; text-align: left;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+          <div style="width: 52px; height: 52px; border-radius: 10px; background: var(--acDim); display: flex; align-items: center; justify-content: center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17.5 14v5M15 16.5h5"/></svg>
+          </div>
+          <div>
+            <div style="font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--hd);">DIgSILENT PowerFactory</div>
+            <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--ac); text-transform: uppercase;">RMS & EMT Simulation</div>
+          </div>
+        </div>
+        <div style="font-size: 14px; color: var(--txM); line-height: 1.75; margin-bottom: 20px;">The UK's most widely adopted power system analysis platform. PowerFactory supports everything from steady-state load flow through to sophisticated electromagnetic transient simulation, making it the default choice for DNO and TO connection studies.</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Load Flow</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Fault Level</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">RMS Dynamic</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">EMT Simulation</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Protection Co-ordination</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">State Estimation</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Optimal Power Flow</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Harmonics</span>
+        </div>
       </div>
       
-      <div class="pcard">
-        <div style="font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--hd); line-height: 1.35; margin-bottom: 8px;">PSCAD / EMTDC</div>
-        <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--ac); text-transform: uppercase;">Electromagnetic Transient</div>
+      <div style="background: var(--bg2); border: 1px solid var(--bdr); border-radius: 10px; padding: 32px; text-align: left;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+          <div style="width: 52px; height: 52px; border-radius: 10px; background: var(--acDim); display: flex; align-items: center; justify-content: center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div>
+            <div style="font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--hd);">PSCAD / EMTDC</div>
+            <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--ac); text-transform: uppercase;">Electromagnetic Transient</div>
+          </div>
+        </div>
+        <div style="font-size: 14px; color: var(--txM); line-height: 1.75; margin-bottom: 20px;">The gold standard for electromagnetic transient studies. PSCAD enables detailed modelling of fault ride-through behaviour, converter control systems, and sub-cycle events. Essential for OFGEM compliance and complex connection studies.</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">EMT Studies</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Wind Farm Modelling</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Solar/BESS Inverter</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Fault Ride-Through</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Converter Control</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">HVDC / FACTS</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Insulation Co-ordination</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">DC Systems</span>
+        </div>
       </div>
       
-      <div class="pcard">
-        <div style="font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--hd); line-height: 1.35; margin-bottom: 8px;">PSS®E</div>
-        <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--ac); text-transform: uppercase;">Transmission Planning</div>
+      <div style="background: var(--bg2); border: 1px solid var(--bdr); border-radius: 10px; padding: 32px; text-align: left;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+          <div style="width: 52px; height: 52px; border-radius: 10px; background: var(--acDim); display: flex; align-items: center; justify-content: center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg>
+          </div>
+          <div>
+            <div style="font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--hd);">PSS®E</div>
+            <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--ac); text-transform: uppercase;">Transmission Planning</div>
+          </div>
+        </div>
+        <div style="font-size: 14px; color: var(--txM); line-height: 1.75; margin-bottom: 20px;">Siemens PSS®E is the established standard for transmission network analysis across the UK and internationally. Widely used by National Grid Electricity System Operator (NG ESO) and transmission owners for planning, operational, and constraint studies.</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Power Flow Analysis</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Transmission Planning</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Contingency Analysis</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Dynamic Simulation</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Interarea Transfer</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Reactive Power Studies</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Short Circuit</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Topology Processor</span>
+        </div>
       </div>
       
-      <div class="pcard">
-        <div style="font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--hd); line-height: 1.35; margin-bottom: 8px;">CDEGS</div>
-        <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--ac); text-transform: uppercase;">Earthing & Lightning</div>
+      <div style="background: var(--bg2); border: 1px solid var(--bdr); border-radius: 10px; padding: 32px; text-align: left;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+          <div style="width: 52px; height: 52px; border-radius: 10px; background: var(--acDim); display: flex; align-items: center; justify-content: center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div style="font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--hd);">CDEGS</div>
+            <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--ac); text-transform: uppercase;">Earthing & Lightning</div>
+          </div>
+        </div>
+        <div style="font-size: 14px; color: var(--txM); line-height: 1.75; margin-bottom: 20px;">SES's CDEGS is the authoritative tool for earthing system analysis, soil resistivity modelling, and lightning strike assessment. Required for substation design, wind farm earthing, and any project where human safety near electrical infrastructure is a concern.</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Earthing Design</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Soil Resistivity</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Step & Touch Voltage</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Lightning Risk</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Substation Earth Mat</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">EMF Assessment</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Cable Sheath Current</span>
+          <span style="font-size: 11px; background: var(--acDim); color: var(--ac); padding: 4px 10px; border-radius: 4px; font-family: var(--mono);">Interference Studies</span>
+        </div>
       </div>
       
     </div>
