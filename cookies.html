@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cookies Policy | Grid Bridge Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #f5f6f8; --bg2: #ffffff; --bg3: #eef1f5; --ac: #2563eb; --acHover: #1d4fd8;
+  --acDim: rgba(37,99,235,0.07); --tx: #334155; --txM: #64748b; --hd: #0f172a;
+  --bdr: rgba(15,23,42,0.07); --bdrH: rgba(37,99,235,0.18); --sans: 'IBM Plex Sans', -apple-system, sans-serif; --mono: 'IBM Plex Mono', monospace;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--bg); color: var(--tx); line-height: 1.7; }
+a { color: var(--ac); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav { background: var(--bg2); border-bottom: 1px solid var(--bdr); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); background: rgba(255,255,255,0.92); }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 17px; color: var(--hd); }
+.nav-logo span { color: var(--ac); }
+.nav-inner a { color: var(--txM); font-size: 15px; font-weight: 500; transition: color 0.2s; padding: 8px 0; }
+.nav-inner a:hover, .nav-inner a.active { color: var(--ac); text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--hd); margin: 5px 0; border-radius: 2px; transition: 0.3s; }
+@media (max-width: 900px) { .hamburger { display: block; } .nav-links { display: none; } }
+.mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--bg2); border-bottom: 1px solid var(--bdr); padding: 20px; z-index: 99; }
+.mobile-menu.open { display: block; }
+.mobile-menu a { display: block; padding: 12px 0; color: var(--tx); font-size: 16px; border-bottom: 1px solid var(--bdr); }
+.container { max-width: 860px; margin: 0 auto; padding: 60px 40px; }
+.page-header { text-align: center; margin-bottom: 48px; }
+.label { font-family: var(--mono); font-size: 11px; letter-spacing: 3.5px; color: var(--ac); text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.label-line { display: inline-block; width: 32px; height: 1px; background: var(--ac); }
+.heading { font-size: 36px; font-weight: 700; color: var(--hd); line-height: 1.2; margin-bottom: 16px; }
+.subtitle { font-size: 17px; color: var(--txM); max-width: 560px; margin: 0 auto; line-height: 1.8; }
+.content { background: var(--bg2); border: 1px solid var(--bdr); border-radius: 12px; padding: 48px; }
+@media (max-width: 768px) { .content { padding: 32px 24px; } .container { padding: 40px 24px; } }
+.content h2 { font-size: 20px; font-weight: 600; color: var(--hd); margin: 36px 0 14px; }
+.content h2:first-child { margin-top: 0; }
+.content p { font-size: 15px; color: var(--tx); margin-bottom: 16px; line-height: 1.8; }
+.content ul { margin: 0 0 20px 20px; }
+.content li { font-size: 15px; color: var(--tx); margin-bottom: 8px; line-height: 1.7; }
+.content strong { color: var(--hd); font-weight: 600; }
+.last-updated { font-family: var(--mono); font-size: 12px; color: var(--txM); text-align: center; margin-bottom: 32px; }
+.callout { background: var(--acDim); border: 1px solid var(--bdrH); border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+.callout p { margin-bottom: 0; font-size: 14px; }
+footer { background: var(--hd); color: rgba(255,255,255,0.5); padding: 48px 40px 32px; margin-top: 80px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+@media (max-width: 768px) { .foot-grid { grid-template-columns: 1fr; gap: 32px; } }
+.foot-brand p { font-size: 14px; line-height: 1.7; margin-top: 12px; max-width: 280px; }
+.foot-col h4 { font-size: 11px; font-family: var(--mono); letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 16px; }
+.foot-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 10px; transition: color 0.2s; }
+.foot-col a:hover { color: #fff; text-decoration: none; }
+.foot-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 12px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="home.html" style="display:flex;align-items:center;gap:12px">
+      <svg width="36" height="36" viewBox="0 0 32 32" fill="none"><rect x="2" y="13" width="28" height="6" rx="2" fill="#2563eb" opacity=".85"/><rect x="7" y="4" width="5" height="24" rx="2" fill="#2563eb" opacity=".35"/><rect x="20" y="4" width="5" height="24" rx="2" fill="#2563eb" opacity=".35"/></svg>
+      <div><div style="font-weight:700;font-size:20px;color:var(--hd);line-height:1.05;letter-spacing:.2px">Grid Bridge</div><div style="font-family:var(--mono);font-size:9px;letter-spacing:3.2px;color:var(--ac);text-transform:uppercase">Solutions</div></div>
+      <span style="font-weight:700;font-size:16px;color:var(--hd)">Grid Bridge <span style="color:var(--ac)">Solutions</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="expertise.html">Expertise</a>
+      <a href="sectors.html">Sectors</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="home.html" onclick="toggleMenu()">Home</a>
+  <a href="services.html" onclick="toggleMenu()">Services</a>
+  <a href="expertise.html" onclick="toggleMenu()">Expertise</a>
+  <a href="sectors.html" onclick="toggleMenu()">Sectors</a>
+  <a href="projects.html" onclick="toggleMenu()">Projects</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+</div>
+
+<div class="container">
+  <div class="page-header">
+    <div class="label"><span class="label-line"></span>Legal</div>
+    <h1 class="heading">Cookies Policy</h1>
+    <p class="subtitle">Information about how we use cookies on our website.</p>
+  </div>
+  
+  <p class="last-updated">Last updated: April 2026</p>
+  
+  <div class="content">
+    <h2>1. What Are Cookies?</h2>
+    <p>Cookies are small text files that are stored on your device (computer, tablet, or mobile phone) when you visit a website. They are widely used to make websites work more efficiently, provide a better user experience, and give website owners useful information about how visitors use their site.</p>
+    <p>Cookies do not contain viruses or malware and cannot execute code. They are simply text files that your browser stores temporarily or permanently.</p>
+
+    <h2>2. How We Use Cookies</h2>
+    <p>Our website uses cookies to understand how you use our site and to improve your experience. We do not use cookies to identify you personally or to collect information that could be used for marketing purposes without your consent.</p>
+
+    <h2>3. Types of Cookies We Use</h2>
+    
+    <h3>Essential Cookies</h3>
+    <p>These cookies are necessary for our website to function properly. They enable core features such as page navigation, secure areas access, and the contact form. Without these cookies, certain services cannot be provided.</p>
+    <p><strong>Examples:</strong> Session cookies that remember your preferences during your visit, cookies that enable the contact form submission.</p>
+    
+    <h3>Performance Cookies</h3>
+    <p>These cookies collect anonymous information about how visitors use our website. They help us understand which pages are most useful, which pages need improvement, and how visitors navigate through our site.</p>
+    <p><strong>Examples:</strong> Google Analytics cookies that track page views, session duration, and navigation paths.</p>
+
+    <h2>4. Third-Party Cookies</h2>
+    <p>Some cookies on our website are set by third-party services that appear on our pages. We use the following third-party services that may set cookies:</p>
+    <ul>
+      <li><strong>Google Analytics</strong> — to understand how visitors use our website. Google Analytics collects data such as pages visited, time spent on pages, and referring websites. This data is anonymous and aggregated. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+      <li><strong>Google Fonts</strong> — to deliver fonts for consistent typography. Google Fonts may set cookies for font caching purposes. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+      <li><strong>Microsoft Forms</strong> — if you submit an enquiry through our contact form, Microsoft may set cookies related to their form service. <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank">Microsoft Privacy Policy</a></li>
+    </ul>
+
+    <h2>5. Managing Your Cookie Preferences</h2>
+    <p>Most web browsers allow you to control cookies through their settings. You can:</p>
+    <ul>
+      <li>View what cookies are stored on your device</li>
+      <li>Delete all or specific cookies</li>
+      <li>Block cookies from all or certain websites</li>
+      <li>Block third-party cookies</li>
+      <li>Clear all cookies when you close your browser</li>
+    </ul>
+    
+    <div class="callout">
+      <p><strong>Note:</strong> Disabling or deleting essential cookies may affect the functionality of our website. For example, the contact form may not work if essential cookies are blocked.</p>
+    </div>
+
+    <h2>6. How to Manage Cookies in Your Browser</h2>
+    <p>Each browser has different settings for managing cookies. Here are links to cookie management guides for common browsers:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank">Apple Safari</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank">Microsoft Edge</a></li>
+    </ul>
+
+    <h2>7. Updates to This Policy</h2>
+    <p>We may update this Cookies Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. Any changes will be posted on this page with an updated "Last updated" date.</p>
+
+    <h2>8. Contact Us</h2>
+    <p>If you have any questions about our use of cookies, please contact us:</p>
+    <p><strong>Email:</strong> info@gridbridgesolutions.co.uk<br>
+    <strong>Phone:</strong> 07410 907860<br>
+    <strong>Location:</strong> Manchester, United Kingdom</p>
+    
+    <p>For more information about your rights under UK GDPR regarding personal data, please see our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div style="display:flex;align-items:center;gap:10px">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><rect x="2" y="13" width="28" height="6" rx="2" fill="#2563eb" opacity=".85"/><rect x="7" y="4" width="5" height="24" rx="2" fill="#2563eb" opacity=".35"/><rect x="20" y="4" width="5" height="24" rx="2" fill="#2563eb" opacity=".35"/></svg>
+          <span style="font-weight:700;font-size:15px;color:#fff">Grid Bridge Solutions</span>
+        </div>
+        <p style="margin-top:12px;font-size:14px;line-height:1.7;color:rgba(255,255,255,0.5)">Specialist power system modelling and simulation services for the UK energy sector.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="expertise.html">Expertise</a>
+        <a href="sectors.html">Sectors</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="cookies.html">Cookies Policy</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Grid Bridge Solutions. All rights reserved.</span>
+      <span>Registered in England and Wales</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var hamburger = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  hamburger.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
