@@ -3,348 +3,246 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sectors & Clients | Grid Bridge Solutions</title>
-<meta name="description" content="Grid Bridge Solutions works with renewable energy developers, battery storage operators, grid infrastructure companies, and industrial clients across the UK energy sector.">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<title>Sectors | Grid Bridge Solutions</title>
+<meta name="description" content="Grid Bridge Solutions works with renewable energy developers, utilities, and grid operators across the UK and Europe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --bg: #f5f6f8; --bg2: #ffffff; --bg3: #eef1f5; --ac: #2563eb; --acHover: #1d4fd8;
-  --acDim: rgba(37,99,235,0.07); --tx: #334155; --txM: #64748b; --hd: #0f172a;
-  --bdr: rgba(15,23,42,0.07); --bdrH: rgba(37,99,235,0.18); --sans: 'IBM Plex Sans', -apple-system, sans-serif; --mono: 'IBM Plex Mono', monospace;
-}
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--sans); color: var(--tx); background: var(--bg); -webkit-font-smoothing: antialiased; }
-::selection { background: var(--acDim); color: var(--ac); }
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #0f172a;
+  --accent: #3b82f6;
+  --bg-light: #f8fafc;
+  --text-dark: #1e293b;
+  --text-gray: #64748b;
+  --white: #ffffff;
+  --border: #e2e8f0;
+}
+body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--white); }
 a { text-decoration: none; color: inherit; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
-.section { padding: 100px 0; }
-.section-alt { background: var(--bg2); }
+/* Navigation */
+nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 0 2rem; }
+.nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+.logo { display: flex; align-items: center; gap: 0.75rem; color: var(--secondary); }
+.logo svg { height: 40px; width: auto; }
+.logo-text { font-weight: 700; font-size: 1.1rem; line-height: 1.2; }
+.logo-text span { display: block; font-size: 0.7rem; font-weight: 500; color: var(--text-gray); }
+.desk-nav { display: flex; gap: 2rem; align-items: center; }
+.desk-nav a { color: var(--text-dark); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+.desk-nav a:hover { color: var(--primary); }
+.desk-nav a.active { color: var(--primary); }
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--secondary); margin: 5px 0; }
 
-.label { font-family: var(--mono); font-size: 11px; letter-spacing: 3.5px; color: var(--ac); text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-.label-line { width: 24px; height: 1.5px; background: var(--ac); display: inline-block; }
-.heading { font-size: clamp(25px, 3vw, 36px); font-weight: 600; color: var(--hd); line-height: 1.28; margin-bottom: 14px; }
-.subheading { font-size: 18px; font-weight: 500; color: var(--hd); margin-bottom: 12px; }
-.body-text { font-size: 15.5px; line-height: 1.8; color: var(--txM); max-width: 580px; }
-.body-text-lg { font-size: 17px; line-height: 1.85; color: var(--txM); max-width: 720px; }
+/* Hero */
+.hero {
+  min-height: 70vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  background: url('img2.png') no-repeat center center/cover;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(37,99,235,0.5) 100%);
+}
+.hero-content { position: relative; z-index: 1; text-align: center; color: white; max-width: 800px; padding: 0 2rem; }
+.hero-tag { display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.3); letter-spacing: 1px; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: white; margin-bottom: 1rem; line-height: 1.1; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+.hero p { font-size: 1.15rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto; line-height: 1.7; }
 
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 6px; font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 0.15px; cursor: pointer; transition: all 0.25s ease; border: none; text-decoration: none; }
-.btn-primary { background: var(--ac); color: #fff; }
-.btn-primary:hover { background: var(--acHover); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,99,235,0.18); }
-.btn-outline { background: transparent; border: 1.5px solid var(--bdr); color: var(--hd); }
-.btn-outline:hover { border-color: var(--ac); color: var(--ac); }
-.btn-sm { padding: 11px 22px; font-size: 14.5px; }
+/* Sectors Grid */
+.sectors-section { padding: 5rem 2rem; background: var(--white); }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-tag { display: inline-block; background: rgba(37,99,235,0.1); color: var(--primary); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+.section-title { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; color: var(--secondary); margin-bottom: 1rem; }
+.section-subtitle { font-size: 1.1rem; color: var(--text-gray); max-width: 650px; margin: 0 auto; }
+.sectors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+.sector-card { padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); transition: all 0.3s; text-align: center; }
+.sector-card:hover { border-color: var(--accent); box-shadow: 0 15px 40px rgba(37,99,235,0.1); transform: translateY(-3px); }
+.sector-icon { width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+.sector-icon svg { width: 32px; height: 32px; color: white; }
+.sector-card h3 { font-size: 1.25rem; font-weight: 600; color: var(--secondary); margin-bottom: 0.75rem; }
+.sector-card p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.7; }
 
-.card { background: var(--bg2); border: 1px solid var(--bdr); border-radius: 10px; padding: 32px 28px; transition: all 0.3s ease; position: relative; }
-.card:hover { border-color: var(--bdrH); box-shadow: 0 6px 24px rgba(15,23,42,0.04); transform: translateY(-2px); }
-.card-image { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 24px; background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%); }
-.card-icon { width: 48px; height: 48px; border-radius: 10px; background: var(--acDim); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--ac); }
-.card h3 { font-size: 20px; font-weight: 600; color: var(--hd); margin-bottom: 12px; }
-.card p { font-size: 14.5px; line-height: 1.8; color: var(--txM); }
-.card ul { list-style: none; margin-top: 16px; }
-.card li { font-size: 14px; color: var(--txM); padding: 6px 0; border-bottom: 1px solid var(--bdr); display: flex; align-items: center; gap: 10px; }
-.card li:last-child { border-bottom: none; }
-.card li::before { content: '→'; color: var(--ac); font-weight: 600; }
-
-.schip { display: flex; align-items: center; gap: 16px; padding: 22px 24px; border-radius: 8px; border: 1px solid var(--bdr); background: var(--bg2); transition: all 0.25s ease; }
-.schip:hover { border-color: var(--bdrH); }
-
-.stat-box { text-align: center; padding: 32px 20px; background: var(--bg2); border-radius: 12px; border: 1px solid var(--bdr); }
-.stat-number { font-size: 42px; font-weight: 700; color: var(--ac); line-height: 1; margin-bottom: 8px; }
-.stat-label { font-size: 13px; color: var(--txM); font-weight: 500; display: none; }
-
-/* Nav */
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all 0.3s ease; background: rgba(245,246,248,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid transparent; }
-.nav.scrolled { background: rgba(255,255,255,0.92); border-bottom: 1px solid var(--bdr); box-shadow: 0 1px 6px rgba(15,23,42,0.03); }
-.nav-link { color: var(--txM); font-size: 15.5px; font-weight: 500; transition: color 0.2s; cursor: pointer; }
-.nav-link:hover { color: var(--ac); }
-.nav-link.active { color: var(--ac); font-weight: 600; }
-
-.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-.hamburger span { display: block; width: 21px; height: 2px; background: var(--hd); margin: 5px 0; transition: all 0.3s; border-radius: 1px; }
-.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-.mobile-menu { position: fixed; inset: 0; z-index: 99; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); display: none; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
-.mobile-menu.open { display: flex; }
-.mobile-menu a { color: var(--hd); font-size: 18px; font-weight: 500; cursor: pointer; transition: color 0.3s; }
-.mobile-menu a:hover { color: var(--ac); }
+/* CTA */
+.cta-section { background: linear-gradient(135deg, var(--secondary) 0%, #1e3a5f 100%); padding: 5rem 2rem; text-align: center; }
+.cta-section h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+.cta-section p { color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 550px; margin: 0 auto 2rem; }
+.cta-btn { display: inline-block; background: var(--primary); color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+.cta-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
 /* Footer */
-.footer { padding: 52px 0 36px; border-top: 1px solid var(--bdr); background: #0f172a; color: #94a3b8; }
-.footer a { color: #94a3b8; transition: color 0.2s; }
-.footer a:hover { color: #60a5fa; }
+footer { background: #0a0f1a; padding: 4rem 2rem 2rem; color: rgba(255,255,255,0.7); }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 300px; margin-top: 1rem; }
+.footer-col h4 { color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 1px; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.75rem; }
+.footer-col a { color: rgba(255,255,255,0.6); font-size: 0.9rem; transition: color 0.2s; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
+.footer-bottom a { color: rgba(255,255,255,0.5); margin-left: 1.5rem; }
+.footer-bottom a:hover { color: var(--accent); }
 
-.image-placeholder { width: 100%; height: 280px; border-radius: 12px; background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #3b82f6 100%); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white; font-size: 14px; }
-.image-placeholder span { font-size: 12px; opacity: 0.8; margin-top: 8px; }
+/* Mobile Menu */
+.mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: white; padding: 1rem 2rem 2rem; border-bottom: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+.mobile-menu.active { display: block; }
+.mobile-menu a { display: block; padding: 0.75rem 0; color: var(--text-dark); font-weight: 500; border-bottom: 1px solid var(--border); }
 
-@media (max-width: 900px) { .hamburger { display: block; } .desk-nav { display: none !important; } .grid-2 { grid-template-columns: 1fr !important; } .grid-3 { grid-template-columns: 1fr !important; } }
-@media (max-width: 768px) { .container { padding: 0 28px; } .section { padding: 60px 0; } .foot-grid { grid-template-columns: 1fr !important; text-align: center; } }
+@media (max-width: 968px) {
+  .desk-nav { display: none; } .mobile-toggle { display: block; }
+  .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-container { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .hero { min-height: 60vh; }
+  .sectors-grid { grid-template-columns: 1fr; }
+  .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav" id="navbar">
-  <div class="container" style="padding-top:14px;padding-bottom:14px;display:flex;align-items:center;justify-content:space-between">
-    <a href="index.html" style="display:flex;align-items:center;gap:12px">
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
         <rect x="4" y="8" width="6" height="20" rx="2" fill="#93c5fd"/>
         <rect x="26" y="8" width="6" height="20" rx="2" fill="#93c5fd"/>
         <rect x="10" y="16" width="16" height="4" rx="2" fill="#2563eb"/>
       </svg>
-      <div>
-        <div style="font-weight:700;font-size:20px;color:var(--hd);line-height:1.05;letter-spacing:.2px">Grid Bridge</div>
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:3.2px;color:var(--ac);text-transform:uppercase">Solutions</div>
-      </div>
+      <div class="logo-text">Grid Bridge<span style="font-size:10px;letter-spacing:3px;color:#2563eb;font-weight:600;">SOLUTIONS</span></div>
     </a>
-    <div class="desk-nav" style="display:flex;align-items:center;gap:28px">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="expertise.html" class="nav-link">Expertise</a>
-      <a href="sectors.html" class="nav-link active">Sectors</a>
-      <a href="projects.html" class="nav-link">Projects</a>
-      <a href="contact.html" class="btn btn-outline btn-sm">Contact</a>
+    <div class="desk-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="expertise.html">Expertise</a>
+      <a href="sectors.html" class="active">Sectors</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <button class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="expertise.html">Expertise</a>
+    <a href="sectors.html">Sectors</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" onclick="toggleMenu()">Home</a>
-  <a href="services.html" onclick="toggleMenu()">Services</a>
-  <a href="expertise.html" onclick="toggleMenu()">Expertise</a>
-  <a href="sectors.html" onclick="toggleMenu()">Sectors</a>
-  <a href="projects.html" onclick="toggleMenu()">Projects</a>
-  <a href="contact.html" onclick="toggleMenu()">Contact</a>
-</div>
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">Industries We Serve</span>
+    <h1>Sectors & Clients</h1>
+    <p>We work with leading developers, utilities, and equipment manufacturers across the UK and European energy sector.</p>
+  </div>
+</section>
 
-<!-- HERO SECTION -->
-<section style="padding: 120px 0 60px; background: var(--bg);">
+<section class="sectors-section">
   <div class="container">
-    <div style="max-width: 800px;">
-      <div class="label" style="margin-bottom: 20px;"><span class="label-line"></span>Who We Work With</div>
-      <h1 style="font-size: clamp(32px, 4vw, 52px); font-weight: 700; color: var(--hd); line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.5px;">Sectors & Clients</h1>
-      <p style="font-size: 18px; line-height: 1.85; color: var(--txM); max-width: 720px; margin-bottom: 20px;">We support developers, manufacturers, and contractors across the UK energy sector — wherever technically demanding power system modelling and simulation is required.</p>
-      <p style="font-size: 15.5px; line-height: 1.8; color: var(--txM); max-width: 680px; margin-bottom: 30px;">Our clients range from independent renewable energy developers with single projects to multinational utilities managing complex grid infrastructure portfolios.</p>
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="contact.html" class="btn btn-primary">Discuss Your Project <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        <a href="projects.html" class="btn btn-outline">View Our Projects</a>
+    <div class="section-header">
+      <span class="section-tag">Who We Work With</span>
+      <h2 class="section-title">Industries & Sectors</h2>
+      <p class="section-subtitle">Our expertise spans the full breadth of the power system modelling landscape.</p>
+    </div>
+    <div class="sectors-grid">
+      <div class="sector-card">
+        <div class="sector-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </div>
+        <h3>Solar & Wind Energy</h3>
+        <p>Renewable energy developers requiring grid connection studies and generation modelling for solar farms and wind projects.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+        </div>
+        <h3>Battery Storage</h3>
+        <p>BESS developers and investors needing detailed battery modelling, frequency response studies, and revenue analysis.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Grid Infrastructure</h3>
+        <p>Transmission and distribution operators requiring interconnection studies and network reinforcement modelling.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Power Utilities</h3>
+        <p>DNOs and utilities seeking specialist modelling support for grid enhancement and modernization projects.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Developers & Investors</h3>
+        <p>Project developers and financial investors requiring bankable modelling studies for project financing.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3>OEMs & Manufacturers</h3>
+        <p>Equipment manufacturers requiring detailed converter modelling and controller hardware-in-the-loop testing.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-
-
-<!-- IMAGE BREAK -->
-<section style="padding: 0 0 80px; background: var(--bg);">
-  <div class="container">
-    <div style="width:100%;border-radius:12px;overflow:hidden;margin-bottom:40px;"><img src="img2.png" alt="UK Power Network" style="width:100%;height:280px;object-fit:cover;border-radius:12px;"></div>
-  </div>
+<section class="cta-section">
+  <h2>Ready to Start Your Project?</h2>
+  <p>Contact us to discuss your power system modelling requirements.</p>
+  <a href="contact.html" class="cta-btn">Get in Touch</a>
 </section>
 
-<!-- SECTORS DETAILED -->
-<section class="section-alt" style="padding: 80px 0;">
-  <div class="container">
-    <div style="max-width: 700px; margin-bottom: 50px;">
-      <div class="label" style="margin-bottom: 16px;"><span class="label-line"></span>Our Sectors</div>
-      <h2 class="heading" style="font-size: clamp(28px, 3.5vw, 40px);">Expertise Across the Energy Sector</h2>
-      <p class="body-text-lg">We have deep experience working with each sector of the UK energy industry, understanding the specific grid code requirements, technical standards, and commercial drivers that shape each market segment.</p>
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect x="4" y="8" width="6" height="20" rx="2" fill="#93c5fd"/>
+          <rect x="26" y="8" width="6" height="20" rx="2" fill="#93c5fd"/>
+          <rect x="10" y="16" width="16" height="4" rx="2" fill="#2563eb"/>
+        </svg>
+        <div class="logo-text">Grid Bridge<span style="font-size:10px;letter-spacing:3px;color:#2563eb;font-weight:600;">SOLUTIONS</span></div>
+      </a>
+      <p>Specialist power system modelling and simulation consultancy.</p>
     </div>
-    
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
-      
-      <!-- Battery Storage -->
-      <div class="card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="5" y1="10" x2="5" y2="14"/><line x1="9" y1="10" x2="9" y2="14"/><line x1="13" y1="10" x2="13" y2="14"/></svg>
-        </div>
-        <h3>Battery Energy Storage Systems (BESS)</h3>
-        <p>The UK BESS market has grown rapidly, with hundreds of MWs of storage now operational or in development. We support developers throughout the project lifecycle with comprehensive modelling services.</p>
-        <ul>
-          <li>Grid-forming inverter modelling and validation</li>
-          <li>Frequency response services (FFR, Dynamic Modular)</li>
-          <li>Synthetic inertia and RoCoF studies</li>
-          <li>Black start capability assessment</li>
-          <li>Capacity Market technical submissions</li>
-          <li>Connection offer response and negotiation</li>
-        </ul>
-      </div>
-      
-      <!-- Solar PV -->
-      <div class="card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
-        </div>
-        <h3>Solar Photovoltaics</h3>
-        <p>Utility-scale solar continues to expand across the UK, with new connections requiring rigorous technical assessment to ensure compatibility with the distribution and transmission networks.</p>
-        <ul>
-          <li>LV and HV connection studies for solar farms</li>
-          <li>Inverter trip settings and fault ride-through</li>
-          <li>G98/G99 application support for DNOs</li>
-          <li>Power quality assessment (harmonic, flicker)</li>
-          <li>Export limitation studies and reactive power</li>
-          <li>Panel degradation modelling over project lifetime</li>
-        </ul>
-      </div>
-      
-      <!-- Wind Energy -->
-      <div class="card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
-        </div>
-        <h3>Wind Energy</h3>
-        <p>From onshore wind farms in Scotland to offshore developments in the North Sea, we provide the technical modelling required to bring wind projects through connection and into operation.</p>
-        <ul>
-          <li>Onshore and offshore wind turbine modelling</li>
-          <li>Grid code compliance studies (ERC/1, ERC/2)</li>
-          <li>Power system stabiliser tuning</li>
-          <li>Wind farm collector system design support</li>
-          <li>Cape-Wellhead generator modelling</li>
-          <li>Offshore reactive power platform studies</li>
-        </ul>
-      </div>
-      
-      <!-- Grid Infrastructure -->
-      <div class="card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
-        <h3>Transmission & Distribution Networks</h3>
-        <p>Working alongside National Grid, Distribution Network Operators, and Independent Network Operators to ensure the UK grid remains stable, secure, and able to accommodate new generation.</p>
-        <ul>
-          <li>National Grid connection application studies</li>
-          <li>DNO connection offers and offer compliance</li>
-          <li>Network reinforcement optioneering</li>
-          <li>Short circuit level assessment</li>
-          <li>Protection coordination and settings</li>
-          <li>System operability and boundary studies</li>
-        </ul>
-      </div>
-      
-      <!-- Industrial -->
-      <div class="card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M5 20V8l5-4v4l5-4v4l5-4v12H5z"/></svg>
-        </div>
-        <h3>Industrial & Commercial</h3>
-        <p>Large industrial sites, data centres, and commercial developments require robust electrical infrastructure. We provide modelling and assessment services for new connections and upgrades.</p>
-        <ul>
-          <li>Industrial site connection studies</li>
-          <li>On-site generation and CHP modelling</li>
-          <li>Network capacity assessment</li>
-          <li>Power factor correction studies</li>
-          <li>Standby generator and UPS assessment</li>
-          <li>Emissions compliance modelling</li>
-        </ul>
-      </div>
-      
-      <!-- EV & Transport -->
-      <div class="card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="21" r="1"/><circle cx="6" cy="21" r="1"/><path d="M5 11V7a2 2 0 012-2h10a2 2 0 012 2v4"/></svg>
-        </div>
-        <h3>Electric Vehicle Infrastructure</h3>
-        <p>The rapid growth of EV charging networks creates new demands on the electricity network. We support chargepoint operators and developers with technical assessment services.</p>
-        <ul>
-          <li>Rapid charging hub connection studies</li>
-          <li>Distribution network impact assessment</li>
-          <li>Multiple EV charger aggregation modelling</li>
-          <li>Demand side response capability assessment</li>
-          <li>Grid reinforcement cost-benefit analysis</li>
-          <li>V2G (Vehicle-to-Grid) feasibility studies</li>
-        </ul>
-      </div>
-      
-    </div>
+    <div class="footer-col"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="expertise.html">Expertise</a></li><li><a href="sectors.html">Sectors</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="cookies.html">Cookie Policy</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li>07410 907860</li><li>info@gridbridgesolutions.co.uk</li><li>Manchester, UK</li>
+    </ul></div>
   </div>
-</section>
-
-<!-- WHY CLIENTS CHOOSE US -->
-<section class="section">
-  <div class="container">
-    <div style="max-width: 700px; margin-bottom: 50px;">
-      <div class="label" style="margin-bottom: 16px;"><span class="label-line"></span>Why Work With Us</div>
-      <h2 class="heading" style="font-size: clamp(28px, 3.5vw, 40px);">Trusted by Industry Leaders</h2>
-      <p class="body-text-lg">We have built our reputation on technical excellence, clear communication, and delivering exactly what our clients need — on time and to the highest standard.</p>
-    </div>
-    
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-      <div style="padding: 28px; background: var(--bg3); border-radius: 12px;">
-        <div style="font-size: 40px; font-weight: 700; color: var(--ac); margin-bottom: 12px;">01</div>
-        <h4 style="font-size: 17px; font-weight: 600; color: var(--hd); margin-bottom: 10px;">Technical Depth</h4>
-        <p style="font-size: 14px; line-height: 1.75; color: var(--txM);">Our team combines decades of power system engineering experience with hands-on modelling expertise across all major platforms.</p>
-      </div>
-      <div style="padding: 28px; background: var(--bg3); border-radius: 12px;">
-        <div style="font-size: 40px; font-weight: 700; color: var(--ac); margin-bottom: 12px;">02</div>
-        <h4 style="font-size: 17px; font-weight: 600; color: var(--hd); margin-bottom: 10px;">Rapid Response</h4>
-        <p style="font-size: 14px; line-height: 1.75; color: var(--txM);">We understand development timelines. Standard studies are typically completed within 2-4 weeks, with urgent work accommodated where possible.</p>
-      </div>
-      <div style="padding: 28px; background: var(--bg3); border-radius: 12px;">
-        <div style="font-size: 40px; font-weight: 700; color: var(--ac); margin-bottom: 12px;">03</div>
-        <h4 style="font-size: 17px; font-weight: 600; color: var(--hd); margin-bottom: 10px;">Clear Communication</h4>
-        <p style="font-size: 14px; line-height: 1.75; color: var(--txM);">Technical reports written for engineers, not lawyers. We explain findings clearly and are always available to discuss results.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BAND -->
-<section style="padding: 80px 0; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);">
-  <div class="container" style="text-align: center;">
-    <h2 style="font-size: clamp(24px, 3vw, 36px); font-weight: 600; color: white; margin-bottom: 16px;">Ready to start your next project?</h2>
-    <p style="font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto 30px;">Whether you need a standalone study, ongoing modelling support, or a technical partner for your next development — we'd be delighted to hear from you.</p>
-    <a href="contact.html" class="btn btn-primary" style="background: white; color: var(--ac);">Get in Touch <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 44px; margin-bottom: 44px;">
-      <div>
-        <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px;">
-          <svg width="22" height="22" viewBox="0 0 36 36" fill="none"><rect x="4" y="8" width="6" height="20" rx="2" fill="#93c5fd"/><rect x="26" y="8" width="6" height="20" rx="2" fill="#93c5fd"/><rect x="10" y="16" width="16" height="4" rx="2" fill="#2563eb"/></svg>
-          <span style="font-size: 14px; font-weight: 700; color: #f1f5f9">Grid Bridge Solutions</span>
-        </div>
-        <p style="font-size: 13px; line-height: 1.75; max-width: 340px;">Specialist power system modelling and simulation consultancy. Delivering technically rigorous studies, models, and engineering support for the UK energy sector.</p>
-      </div>
-      <div>
-        <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 2px; color: #60a5fa; text-transform: uppercase; margin-bottom: 14px;">Quick Links</div>
-        <div style="margin-bottom: 9px;"><a href="services.html" style="font-size: 13px">Services</a></div>
-        <div style="margin-bottom: 9px;"><a href="expertise.html" style="font-size: 13px">Expertise</a></div>
-        <div style="margin-bottom: 9px;"><a href="sectors.html" style="font-size: 13px">Sectors</a></div>
-        <div style="margin-bottom: 9px;"><a href="projects.html" style="font-size: 13px">Projects</a></div>
-        <div style="margin-bottom: 9px;"><a href="contact.html" style="font-size: 13px">Contact</a></div>
-      </div>
-      <div>
-        <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 2px; color: #60a5fa; text-transform: uppercase; margin-bottom: 14px;">Contact</div>
-        <p style="font-size: 13px; line-height: 1.8">07410 907860<br>info@gridbridgesolutions.co.uk<br>Manchester, UK</p>
-      </div>
-    </div>
-    <div style="border-top: 1px solid rgba(255,255,255,0.07); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-      <span style="font-family: var(--mono); font-size: 11px; color: #475569; letter-spacing: .4px;">© 2026 Grid Bridge Solutions Ltd. All rights reserved.</span>
-      <div style="display: flex; gap: 18px;">
-        <a href="privacy-policy.html" style="font-size: 12px; color: #64748b;">Privacy Policy</a>
-        <a href="terms.html" style="font-size: 12px; color: #64748b;">Terms of Service</a>
-        <a href="cookies.html" style="font-size: 12px; color: #64748b;">Cookies Policy</a>
-      </div>
-    </div>
+  <div class="footer-bottom">
+    <span>© 2026 Grid Bridge Solutions. All rights reserved.</span>
+    <div><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div>
   </div>
 </footer>
-
 <script>
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-  document.getElementById('hamburger').classList.toggle('open');
-}
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+document.querySelectorAll('.mobile-menu a').forEach(link => { link.addEventListener('click', () => { document.getElementById('mobileMenu').classList.remove('active'); }); });
 </script>
 </body>
 </html>

@@ -1,216 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expertise & Platforms | Grid Bridge Solutions</title>
-    <meta name="description" content="Grid Bridge Solutions works across all major power system modelling platforms including DIgSILENT PowerFactory, PSCAD, PSS®E, and CDEGS.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #0f172a;
-            --accent: #3b82f6;
-            --bg-light: #f8fafc;
-            --text-dark: #1e293b;
-            --text-gray: #64748b;
-            --white: #ffffff;
-            --border: #e2e8f0;
-            --mono: 'IBM Plex Mono', monospace;
-        }
-        body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--white); }
-        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 0 2rem; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--secondary); }
-        .logo svg { height: 40px; width: auto; }
-        .logo-text { font-weight: 700; font-size: 1.1rem; line-height: 1.2; }
-        .logo-text span { display: block; font-size: 0.7rem; font-weight: 500; color: var(--text-gray); }
-        .desk-nav { display: flex; gap: 2rem; align-items: center; }
-        .desk-nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
-        .desk-nav a:hover { color: var(--primary); }
-        .desk-nav a.active { color: var(--primary); }
-        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-        .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--secondary); margin: 5px 0; transition: 0.3s; }
-        .page-hero { padding: 8rem 2rem 4rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); text-align: center; }
-        .page-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--secondary); margin-bottom: 1rem; }
-        .page-hero p { font-size: 1.1rem; color: var(--text-gray); max-width: 650px; margin: 0 auto; }
-        .platforms-section { padding: 5rem 2rem; background: var(--white); }
-        .section-container { max-width: 1200px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 3.5rem; }
-        .section-tag { display: inline-block; background: rgba(37, 99, 235, 0.1); color: var(--primary); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-        .section-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: var(--secondary); margin-bottom: 1rem; }
-        .section-subtitle { font-size: 1.05rem; color: var(--text-gray); max-width: 600px; margin: 0 auto; }
-        .platforms-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-        .platform-card { background: var(--bg-light); border-radius: 16px; padding: 2.5rem; border: 1px solid var(--border); transition: all 0.3s ease; }
-        .platform-card:hover { border-color: var(--accent); box-shadow: 0 10px 40px rgba(37, 99, 235, 0.1); transform: translateY(-2px); }
-        .platform-header { display: flex; align-items: flex-start; gap: 1.25rem; margin-bottom: 1.25rem; }
-        .platform-icon { width: 52px; height: 52px; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .platform-icon svg { width: 26px; height: 26px; color: white; }
-        .platform-name { font-family: var(--mono); font-size: 1rem; font-weight: 600; color: var(--secondary); line-height: 1.35; }
-        .platform-card p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem; }
-        .capabilities-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .cap-tag { background: white; border: 1px solid var(--border); color: var(--text-dark); padding: 0.35rem 0.85rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
-        .caps-section { padding: 4rem 2rem; background: var(--bg-light); }
-        .caps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-        .cap-item { background: var(--white); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); display: flex; align-items: flex-start; gap: 1rem; }
-        .cap-icon { width: 36px; height: 36px; background: rgba(37, 99, 235, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .cap-icon svg { width: 18px; height: 18px; color: var(--primary); }
-        .cap-item h4 { font-size: 0.95rem; font-weight: 600; color: var(--secondary); margin-bottom: 0.25rem; }
-        .cap-item p { font-size: 0.85rem; color: var(--text-gray); }
-        .cta-section { background: linear-gradient(135deg, var(--secondary) 0%, #1e3a5f 100%); padding: 5rem 2rem; text-align: center; }
-        .cta-section h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
-        .cta-section p { color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; max-width: 550px; margin: 0 auto 2rem; }
-        .cta-btn { display: inline-block; background: var(--primary); color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; }
-        .cta-btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3); }
-        footer { background: #0a0f1a; padding: 4rem 2rem 2rem; color: rgba(255, 255, 255, 0.7); }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .footer-brand .logo { margin-bottom: 1rem; }
-        .footer-brand .logo-text { color: white; }
-        .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
-        .footer-col h4 { color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 1px; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 0.75rem; }
-        .footer-col a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-        .footer-col a:hover { color: var(--accent); }
-        .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
-        .footer-bottom a { color: rgba(255, 255, 255, 0.5); text-decoration: none; margin-left: 1.5rem; }
-        .footer-bottom a:hover { color: var(--accent); }
-        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: white; padding: 1rem 2rem 2rem; border-bottom: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); }
-        .mobile-menu.active { display: block; }
-        .mobile-menu a { display: block; padding: 0.75rem 0; color: var(--text-dark); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--border); }
-        .mobile-menu a:last-child { border-bottom: none; }
-        @media (max-width: 968px) { .desk-nav { display: none; } .mobile-toggle { display: block; } .platforms-grid { grid-template-columns: 1fr; } .caps-grid { grid-template-columns: 1fr; } .footer-container { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 640px) { .page-hero { padding: 7rem 1rem 3rem; } .platforms-section { padding: 3rem 1rem; } .platform-card { padding: 1.5rem; } .caps-section { padding: 3rem 1rem; } .cta-section { padding: 3rem 1rem; } .footer-container { grid-template-columns: 1fr; gap: 2rem; } .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; } .footer-bottom div { order: 1; } .footer-bottom span { order: 2; } .footer-bottom a { margin: 0 0.75rem; } }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Expertise | Grid Bridge Solutions</title>
+<meta name="description" content="Grid Bridge Solutions has expertise in DIgSILENT PowerFactory, PSCAD, PSS®E, and CDEGS for power system modelling and simulation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #2563eb; --primary-dark: #1d4ed8; --secondary: #0f172a;
+  --accent: #3b82f6; --bg-light: #f8fafc; --text-dark: #1e293b;
+  --text-gray: #64748b; --white: #ffffff; --border: #e2e8f0;
+}
+body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--white); }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Navigation */
+nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 0 2rem; }
+.nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+.logo { display: flex; align-items: center; gap: 0.75rem; color: var(--secondary); }
+.logo svg { height: 40px; width: auto; }
+.logo-text { font-weight: 700; font-size: 1.1rem; line-height: 1.2; }
+.logo-text span { display: block; font-size: 0.7rem; font-weight: 500; color: var(--text-gray); }
+.desk-nav { display: flex; gap: 2rem; align-items: center; }
+.desk-nav a { color: var(--text-dark); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+.desk-nav a:hover { color: var(--primary); }
+.desk-nav a.active { color: var(--primary); }
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--secondary); margin: 5px 0; }
+
+/* Hero */
+.hero {
+  min-height: 70vh; display: flex; align-items: center; justify-content: center;
+  position: relative; background: url('img4.png') no-repeat center center/cover;
+}
+.hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(37,99,235,0.5) 100%);
+}
+.hero-content { position: relative; z-index: 1; text-align: center; color: white; max-width: 800px; padding: 0 2rem; }
+.hero-tag { display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.3); letter-spacing: 1px; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: white; margin-bottom: 1rem; line-height: 1.1; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+.hero p { font-size: 1.15rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+/* Platforms */
+.platforms-section { padding: 5rem 2rem; background: var(--white); }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-tag { display: inline-block; background: rgba(37,99,235,0.1); color: var(--primary); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+.section-title { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; color: var(--secondary); margin-bottom: 1rem; }
+.section-subtitle { font-size: 1.1rem; color: var(--text-gray); max-width: 650px; margin: 0 auto; }
+.platforms-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+.platform-card { padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); transition: all 0.3s; }
+.platform-card:hover { border-color: var(--accent); box-shadow: 0 15px 40px rgba(37,99,235,0.1); transform: translateY(-3px); }
+.platform-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.platform-icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.platform-icon svg { width: 26px; height: 26px; color: white; }
+.platform-card h3 { font-size: 1.35rem; font-weight: 600; color: var(--secondary); }
+.platform-card p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
+.platform-features { background: var(--bg-light); padding: 1rem 1.25rem; border-radius: 8px; }
+.platform-features li { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 0.4rem; padding-left: 1rem; position: relative; }
+.platform-features li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 600; }
+
+/* Capabilities */
+.caps-section { padding: 5rem 2rem; background: var(--bg-light); }
+.caps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.cap-item { background: white; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); text-align: center; }
+.cap-item h4 { font-size: 1rem; font-weight: 600; color: var(--secondary); margin-bottom: 0.5rem; }
+.cap-item p { font-size: 0.85rem; color: var(--text-gray); }
+
+/* CTA */
+.cta-section { background: linear-gradient(135deg, var(--secondary) 0%, #1e3a5f 100%); padding: 5rem 2rem; text-align: center; }
+.cta-section h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+.cta-section p { color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 550px; margin: 0 auto 2rem; }
+.cta-btn { display: inline-block; background: var(--primary); color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+.cta-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+/* Footer */
+footer { background: #0a0f1a; padding: 4rem 2rem 2rem; color: rgba(255,255,255,0.7); }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 300px; margin-top: 1rem; }
+.footer-col h4 { color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 1px; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.75rem; }
+.footer-col a { color: rgba(255,255,255,0.6); font-size: 0.9rem; transition: color 0.2s; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
+.footer-bottom a { color: rgba(255,255,255,0.5); margin-left: 1.5rem; }
+.footer-bottom a:hover { color: var(--accent); }
+
+/* Mobile Menu */
+.mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: white; padding: 1rem 2rem 2rem; border-bottom: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+.mobile-menu.active { display: block; }
+.mobile-menu a { display: block; padding: 0.75rem 0; color: var(--text-dark); font-weight: 500; border-bottom: 1px solid var(--border); }
+
+@media (max-width: 968px) {
+  .desk-nav { display: none; } .mobile-toggle { display: block; }
+  .platforms-grid { grid-template-columns: 1fr; }
+  .caps-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-container { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .hero { min-height: 60vh; }
+  .platforms-grid { grid-template-columns: 1fr; }
+  .caps-grid { grid-template-columns: 1fr; }
+  .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                    <rect x="4" y="8" width="6" height="20" rx="2" fill="#93c5fd"/>
-                    <rect x="26" y="8" width="6" height="20" rx="2" fill="#93c5fd"/>
-                    <rect x="10" y="16" width="16" height="4" rx="2" fill="#2563eb"/>
-                </svg>
-                <div class="logo-text">Grid Bridge<span style="font-size:10px;letter-spacing:3px;color:#2563eb;font-weight:600;">SOLUTIONS</span></div>
-            </a>
-            <div class="desk-nav">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="expertise.html" class="active">Expertise</a>
-                <a href="sectors.html">Sectors</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <button class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <rect x="4" y="8" width="6" height="20" rx="2" fill="#93c5fd"/>
+        <rect x="26" y="8" width="6" height="20" rx="2" fill="#93c5fd"/>
+        <rect x="10" y="16" width="16" height="4" rx="2" fill="#2563eb"/>
+      </svg>
+      <div class="logo-text">Grid Bridge<span style="font-size:10px;letter-spacing:3px;color:#2563eb;font-weight:600;">SOLUTIONS</span></div>
+    </a>
+    <div class="desk-nav">
+      <a href="index.html">Home</a><a href="services.html">Services</a>
+      <a href="expertise.html" class="active">Expertise</a><a href="sectors.html">Sectors</a>
+      <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="services.html">Services</a>
+    <a href="expertise.html">Expertise</a><a href="sectors.html">Sectors</a>
+    <a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">Technical Excellence</span>
+    <h1>Our Expertise</h1>
+    <p>Industry-standard platforms and deep expertise for accurate, reliable power system modelling.</p>
+  </div>
+</section>
+
+<section class="platforms-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Software Platforms</span>
+      <h2 class="section-title">Modelling Platforms</h2>
+      <p class="section-subtitle">We maintain expertise across all major power system simulation platforms.</p>
+    </div>
+    <div class="platforms-grid">
+      <div class="platform-card">
+        <div class="platform-header">
+          <div class="platform-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>DIgSILENT PowerFactory</h3>
         </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="expertise.html">Expertise</a>
-            <a href="sectors.html">Sectors</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
+        <p>Industry-leading power system analysis software for transmission, distribution, and industrial network modelling.</p>
+        <ul class="platform-features">
+          <li>Load flow & fault analysis</li>
+          <li>Dynamic & RMS simulation</li>
+          <li>Protection coordination</li>
+          <li>Power quality studies</li>
+          <li>Scripting automation (Python/DPL)</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-header">
+          <div class="platform-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          <h3>PSCAD</h3>
         </div>
-    </nav>
-
-    <section class="page-hero">
-        <h1>Platforms & Capabilities</h1>
-        <p>We work across all major power system modelling platforms, selecting the right tool for each project's specific requirements.</p>
-    </section>
-
-    <section class="platforms-section">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">Software Platforms</span>
-                <h2 class="section-title">Industry-Standard Tools</h2>
-                <p class="section-subtitle">Each platform offers distinct strengths for different aspects of power system analysis.</p>
-            </div>
-            <div class="platforms-grid">
-                <div class="platform-card">
-                    <div class="platform-header">
-                        <div class="platform-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
-                        <div class="platform-name">DIgSILENT<br>PowerFactory</div>
-                    </div>
-                    <p>Commercial-grade power system analysis software widely used across the UK and European transmission networks. PowerFactory excels in balanced and unbalanced load flow, fault analysis, RMS/EMT simulation, and reliability studies. It's the preferred choice for National Grid and Distribution Network Operator studies due to its comprehensive protection modelling and automated reporting capabilities.</p>
-                    <div class="capabilities-list">
-                        <span class="cap-tag">Load Flow</span><span class="cap-tag">Fault Analysis</span><span class="cap-tag">RMS/EMT Simulation</span><span class="cap-tag">Protection Co-ordination</span><span class="cap-tag">Reliability Studies</span><span class="cap-tag">Dynamic Stability</span>
-                    </div>
-                </div>
-                <div class="platform-card">
-                    <div class="platform-header">
-                        <div class="platform-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div>
-                        <div class="platform-name">PSCAD</div>
-                    </div>
-                    <p>Industry-leading electromagnetic transient simulation environment. PSCAD is essential for detailed studies of fault ride-through, converter control interactions, and hardware-in-the-loop testing. Particularly valuable for renewable energy connections where understanding high-frequency dynamics and control system behaviour is critical for successful DNO/TO submissions.</p>
-                    <div class="capabilities-list">
-                        <span class="cap-tag">EMT Simulation</span><span class="cap-tag">Fault Ride-Through</span><span class="cap-tag">Converter Control</span><span class="cap-tag">HIL Testing</span><span class="cap-tag">Wind/Solar Modelling</span><span class="cap-tag">Grid Code Compliance</span>
-                    </div>
-                </div>
-                <div class="platform-card">
-                    <div class="platform-header">
-                        <div class="platform-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg></div>
-                        <div class="platform-name">PSS®E</div>
-                    </div>
-                    <p>Renowned in transmission system analysis and extensively used by National Grid and major generators. Its strength lies in large-scale network studies, cascading failure analysis, and long-term stability assessments. The platform's extensive library of generator models and automatic transmission network equivalent creation make it indispensable for complex grid connection studies.</p>
-                    <div class="capabilities-list">
-                        <span class="cap-tag">Transmission Studies</span><span class="cap-tag">Cascading Failure</span><span class="cap-tag">Long-Term Stability</span><span class="cap-tag">Network Equivalents</span><span class="cap-tag">Interconnection Studies</span><span class="cap-tag">Voltage Stability</span>
-                    </div>
-                </div>
-                <div class="platform-card">
-                    <div class="platform-header">
-                        <div class="platform-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-                        <div class="platform-name">CDEGS</div>
-                    </div>
-                    <p>Specialised environment for grounding analysis, electromagnetic interference studies, and cable system modelling. Essential for substation grounding grid design, pipeline interference assessment, and AC/DC interference studies. Comprehensive electromagnetic field calculation capabilities make it the go-to tool for projects involving complex earthing arrangements or proximity to existing infrastructure.</p>
-                    <div class="capabilities-list">
-                        <span class="cap-tag">Grounding Analysis</span><span class="cap-tag">EMI Studies</span><span class="cap-tag">Cable Modelling</span><span class="cap-tag">Interference Assessment</span><span class="cap-tag">Substation Design</span><span class="cap-tag">AC/DC Interference</span>
-                    </div>
-                </div>
-            </div>
+        <p>Electromagnetic transient simulation for detailed converter modelling and controller design validation.</p>
+        <ul class="platform-features">
+          <li>HVDC & FACTS modelling</li>
+          <li>Wind turbine converter control</li>
+          <li>Custom controller implementation</li>
+          <li>Time-domain electromagnetic transients</li>
+          <li>Hardware-in-the-loop preparation</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-header">
+          <div class="platform-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>PSS®E</h3>
         </div>
-    </section>
-
-    <section class="caps-section">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">What We Do</span>
-                <h2 class="section-title">Core Capabilities</h2>
-                <p class="section-subtitle">Beyond platform expertise, we bring deep technical knowledge across all aspects of power system modelling.</p>
-            </div>
-            <div class="caps-grid">
-                <div class="cap-item"><div class="cap-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><div><h4>Grid Connection Studies</h4><p>Full scope studies for NGET and DNO connection applications, including fault level, load flow, and protection assessments.</p></div></div>
-                <div class="cap-item"><div class="cap-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div><div><h4>Renewable Energy Modelling</h4><p>Detailed modelling of wind, solar, and battery storage with accurate converter and control system representation.</p></div></div>
-                <div class="cap-item"><div class="cap-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><div><h4>Protection & Co-ordination</h4><p>Protection relay settings, selectivity studies, and coordination analysis for transmission and distribution networks.</p></div></div>
-                <div class="cap-item"><div class="cap-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div><h4>Power Quality Analysis</h4><p>Harmonic assessment, voltage flicker analysis, and power quality compliance verification for grid connections.</p></div></div>
-                <div class="cap-item"><div class="cap-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div><div><h4>BESS & Storage Studies</h4><p>Performance modelling, frequency response studies, and grid services assessment for battery energy storage systems.</p></div></div>
-                <div class="cap-item"><div class="cap-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg></div><div><h4>Thermal Rating Assessment</h4><p>Line and cable thermal ratings, real-time monitoring integration, and climate-adjusted capacity analysis.</p></div></div>
-                <div class="cap-item"><div class="cap-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg></div><div><h4>Network Reinforcement</h4><p>Reinforcement option identification, comparative analysis, and optimal solution development for constrained networks.</p></div></div>
-                <div class="cap-item"><div class="cap-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg></div><div><h4>HVDC & FACTS</h4><p>Modelling of voltage source converters, HVDC links, and flexible AC transmission systems for grid applications.</p></div></div>
-            </div>
+        <p>Transmission planning and operations software for large-scale network analysis and stability studies.</p>
+        <ul class="platform-features">
+          <li>Transmission planning studies</li>
+          <li>Stability & transient analysis</li>
+          <li>Interconnection studies</li>
+          <li>Network equivalent modelling</li>
+          <li>PSS®E Python API automation</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-header">
+          <div class="platform-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>CDEGS</h3>
         </div>
-    </section>
+        <p>Specialist earthing and electromagnetic field analysis for substations and pipeline interference studies.</p>
+        <ul class="platform-features">
+          <li>Substation earthing design</li>
+          <li>Soil resistivity analysis</li>
+          <li>Pipeline interference assessment</li>
+          <li>EMF environmental studies</li>
+          <li>Cable sheath current analysis</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="cta-section">
-        <h2>Need Power System Modelling?</h2>
-        <p>We'd be happy to discuss your project requirements and provide a tailored proposal.</p>
-        <a href="contact.html" class="cta-btn">Get in Touch</a>
-    </section>
+<section class="caps-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">What We Do</span>
+      <h2 class="section-title">Core Capabilities</h2>
+    </div>
+    <div class="caps-grid">
+      <div class="cap-item"><h4>Grid Connection Studies</h4><p>G99/G100 applications, statement of works, DC converter station modelling</p></div>
+      <div class="cap-item"><h4>BESS Modelling</h4><p>Grid-forming, synthetic inertia, frequency response, black start capability</p></div>
+      <div class="cap-item"><h4>Renewable Integration</h4><p>Wind, solar, hydro modelling with accurate converter representation</p></div>
+      <div class="cap-item"><h4>Protection Studies</h4><p>Coordination analysis, relay settings, PSCAD protection modelling</p></div>
+      <div class="cap-item"><h4>Power Quality</h4><p>Harmonics, flicker, voltage dip assessment, mitigation design</p></div>
+      <div class="cap-item"><h4>Stability Analysis</h4><p>Transient, voltage, frequency stability for transmission networks</p></div>
+      <div class="cap-item"><h4>HVDC & FACTS</h4><p>VSC-HVDC, STATCOM, TCSC modelling and controller design</p></div>
+      <div class="cap-item"><h4>Earthing Design</h4><p>Substation ground grid design, touch & step potential analysis</p></div>
+      <div class="cap-item"><h4>Technical Due Diligence</h4><p>Independent review of project modelling for investors and lenders</p></div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-brand"><a href="index.html" class="logo"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="8" width="6" height="20" rx="2" fill="#93c5fd"/><rect x="26" y="8" width="6" height="20" rx="2" fill="#93c5fd"/><rect x="10" y="16" width="16" height="4" rx="2" fill="#2563eb"/></svg><div class="logo-text">Grid Bridge<span style="font-size:10px;letter-spacing:3px;color:#2563eb;font-weight:600;">SOLUTIONS</span></div></a><p style="margin-top: 1rem;">Specialist power system modelling and simulation consultancy serving renewable energy and grid infrastructure projects.</p></div>
-            <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="expertise.html">Expertise</a></li><li><a href="sectors.html">Sectors</a></li><li><a href="projects.html">Projects</a></li></ul></div>
-            <div class="footer-col"><h4>Resources</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="cookies.html">Cookie Policy</a></li></ul></div>
-            <div class="footer-col"><h4>Contact</h4><ul><li>07410 907860</li><li>info@gridbridgesolutions.co.uk</li></ul></div>
-        </div>
-        <div class="footer-bottom"><span>© 2026 Grid Bridge Solutions. All rights reserved.</span><div><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div></div>
-    </footer>
+<section class="cta-section">
+  <h2>Need Expert Modelling Support?</h2>
+  <p>Contact us to discuss your power system modelling requirements.</p>
+  <a href="contact.html" class="cta-btn">Get in Touch</a>
+</section>
 
-    <script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}document.querySelectorAll('.mobile-menu a').forEach(link=>{link.addEventListener('click',()=>{document.getElementById('mobileMenu').classList.remove('active')})});const currentPage=window.location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.desk-nav a, .mobile-menu a').forEach(link=>{if(link.getAttribute('href')===currentPage){link.classList.add('active')}});</script>
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect x="4" y="8" width="6" height="20" rx="2" fill="#93c5fd"/>
+          <rect x="26" y="8" width="6" height="20" rx="2" fill="#93c5fd"/>
+          <rect x="10" y="16" width="16" height="4" rx="2" fill="#2563eb"/>
+        </svg>
+        <div class="logo-text">Grid Bridge<span style="font-size:10px;letter-spacing:3px;color:#2563eb;font-weight:600;">SOLUTIONS</span></div>
+      </a>
+      <p>Specialist power system modelling and simulation consultancy.</p>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="expertise.html">Expertise</a></li><li><a href="sectors.html">Sectors</a></li>
+      <li><a href="projects.html">Projects</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="cookies.html">Cookie Policy</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li>07410 907860</li><li>info@gridbridgesolutions.co.uk</li><li>Manchester, UK</li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Grid Bridge Solutions. All rights reserved.</span>
+    <div><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div>
+  </div>
+</footer>
+<script>
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+document.querySelectorAll('.mobile-menu a').forEach(link => { link.addEventListener('click', () => { document.getElementById('mobileMenu').classList.remove('active'); }); });
+</script>
 </body>
 </html>
