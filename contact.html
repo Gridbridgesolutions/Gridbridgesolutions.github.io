@@ -35,12 +35,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0
 
 /* Hero */
 .hero {
-  min-height: 60vh; display: flex; align-items: center; justify-content: center;
-  position: relative; background: url('img4.png') no-repeat center center/cover;
-}
-.hero::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(37,99,235,0.5) 100%);
+  min-height: 50vh; display: flex; align-items: center; justify-content: center;
+  position: relative; background: #ffffff;
 }
 .hero-content { position: relative; z-index: 1; text-align: center; color: white; max-width: 800px; padding: 0 2rem; }
 .hero-tag { display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.3); letter-spacing: 1px; }
@@ -135,9 +131,9 @@ footer { background: #0a0f1a; padding: 4rem 2rem 2rem; color: rgba(255,255,255,0
 
 <section class="hero">
   <div class="hero-content">
-    <span class="hero-tag">Get In Touch</span>
-    <h1>Contact Us</h1>
-    <p>Ready to discuss your power system modelling requirements? We'd love to hear about your project.</p>
+    <span class="hero-tag" style="background:rgba(37,99,235,0.1);color:var(--primary);border:1px solid rgba(37,99,235,0.3);">Get In Touch</span>
+    <h1 style="color:var(--secondary);">Contact Us</h1>
+    <p style="color:var(--text-gray);">Ready to discuss your power system modelling requirements? We'd love to hear about your project.</p>
   </div>
 </section>
 
