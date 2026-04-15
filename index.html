@@ -4,237 +4,356 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Grid Bridge Solutions | Specialist Power System Modelling & Simulation</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<meta name="description" content="Grid Bridge Solutions is a specialist UK consultancy delivering power system modelling and simulation services for renewable energy, BESS, and grid infrastructure projects.">
+<meta name="google-site-verification" content="ES1QNfxvlb-x5ECOA4-Te2SIIOcDG1PL6OAyTPfToXg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --bg: #f5f6f8; --bg2: #ffffff; --bg3: #eef1f5; --ac: #2563eb; --acHover: #1d4fd8;
-  --acDim: rgba(37,99,235,0.07); --tx: #334155; --txM: #64748b; --hd: #0f172a;
-  --bdr: rgba(15,23,42,0.07); --bdrH: rgba(37,99,235,0.18); --sans: 'IBM Plex Sans', -apple-system, sans-serif; --mono: 'IBM Plex Mono', monospace;
-}
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--sans); color: var(--tx); background: var(--bg); -webkit-font-smoothing: antialiased; }
-::selection { background: var(--acDim); color: var(--ac); }
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #0f172a;
+  --accent: #3b82f6;
+  --bg-light: #f8fafc;
+  --text-dark: #1e293b;
+  --text-gray: #64748b;
+  --white: #ffffff;
+  --border: #e2e8f0;
+}
+body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--white); }
 a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
 
-.container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
-.section { padding: 100px 0; }
-.section-alt { background: var(--bg3); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-.label { font-family: var(--mono); font-size: 11px; letter-spacing: 3.5px; color: var(--ac); text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-.label-line { width: 24px; height: 1.5px; background: var(--ac); display: inline-block; }
-.heading { font-size: clamp(25px, 3vw, 36px); font-weight: 600; color: var(--hd); line-height: 1.28; margin-bottom: 14px; }
-.body-text { font-size: 15.5px; line-height: 1.8; color: var(--txM); max-width: 580px; }
+/* Navigation */
+nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 0 2rem; }
+.nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+.logo { display: flex; align-items: center; gap: 0.75rem; color: var(--secondary); }
+.logo svg { height: 40px; width: auto; }
+.logo-text { font-weight: 700; font-size: 1.1rem; line-height: 1.2; }
+.logo-text span { display: block; font-size: 0.7rem; font-weight: 500; color: var(--text-gray); }
+.desk-nav { display: flex; gap: 2rem; align-items: center; }
+.desk-nav a { color: var(--text-dark); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+.desk-nav a:hover { color: var(--primary); }
+.desk-nav a.active { color: var(--primary); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 0.6rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: all 0.25s ease; border: none; cursor: pointer; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.btn-outline { background: transparent; border: 1.5px solid var(--border); color: var(--secondary); }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--secondary); margin: 5px 0; transition: 0.3s; }
 
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 6px; font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 0.15px; cursor: pointer; transition: all 0.25s ease; border: none; text-decoration: none; }
-.btn-primary { background: var(--ac); color: #fff; }
-.btn-primary:hover { background: var(--acHover); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,99,235,0.18); }
-.btn-outline { background: transparent; border: 1.5px solid var(--bdr); color: var(--hd); }
-.btn-outline:hover { border-color: var(--ac); color: var(--ac); }
-.btn-sm { padding: 11px 22px; font-size: 14.5px; }
+/* Hero Section */
+.hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdf4 100%); padding: 8rem 2rem 4rem; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 80%; height: 150%; background: radial-gradient(ellipse, rgba(37, 99, 235, 0.08) 0%, transparent 70%); pointer-events: none; }
+.hero-content { max-width: 900px; text-align: center; position: relative; z-index: 1; margin: 0 auto; }
+.hero-tag { display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1.25rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: var(--secondary); margin-bottom: 1.5rem; line-height: 1.1; }
+.hero p { font-size: 1.2rem; color: var(--text-gray); max-width: 650px; margin: 0 auto 2rem; line-height: 1.7; }
+.hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero-image { margin-top: 3rem; border-radius: 16px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
+.hero-image img { width: 100%; height: auto; display: block; }
+.image-placeholder { width: 100%; height: 400px; border-radius: 16px; background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #3b82f6 100%); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white; font-size: 16px; margin-top: 3rem; }
+.image-placeholder span { font-size: 13px; opacity: 0.8; margin-top: 8px; }
 
-.card { background: var(--bg2); border: 1px solid var(--bdr); border-radius: 10px; padding: 28px 24px; transition: all 0.3s ease; }
-.card:hover { border-color: var(--bdrH); box-shadow: 0 6px 24px rgba(15,23,42,0.04); transform: translateY(-2px); }
+/* Stats Bar */
+.stats-bar { background: var(--secondary); padding: 2.5rem 2rem; }
+.stats-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+.stat-item h3 { font-size: 2.5rem; font-weight: 700; color: var(--accent); margin-bottom: 0.25rem; }
+.stat-item p { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; }
 
-/* Nav */
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all 0.3s ease; background: rgba(245,246,248,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid transparent; }
-.nav.scrolled { background: rgba(255,255,255,0.92); border-bottom: 1px solid var(--bdr); box-shadow: 0 1px 6px rgba(15,23,42,0.03); }
-.nav-link { color: var(--txM); font-size: 15.5px; font-weight: 500; transition: color 0.2s; }
-.nav-link:hover { color: var(--ac); }
+/* Why Section */
+.why-section { padding: 6rem 2rem; background: var(--white); }
+.section-container { max-width: 1200px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-tag { display: inline-block; background: rgba(37, 99, 235, 0.1); color: var(--primary); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+.section-title { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; color: var(--secondary); margin-bottom: 1rem; }
+.section-subtitle { font-size: 1.1rem; color: var(--text-gray); max-width: 600px; margin: 0 auto; }
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.why-card { padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border); transition: all 0.3s ease; }
+.why-card:hover { border-color: var(--accent); box-shadow: 0 10px 40px rgba(37, 99, 235, 0.1); transform: translateY(-2px); }
+.why-card-icon { width: 56px; height: 56px; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+.why-card-icon svg { width: 28px; height: 28px; color: white; }
+.why-card h3 { font-size: 1.25rem; font-weight: 600; color: var(--secondary); margin-bottom: 0.75rem; }
+.why-card p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.7; }
 
-.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-.hamburger span { display: block; width: 21px; height: 2px; background: var(--hd); margin: 5px 0; transition: all 0.3s; border-radius: 1px; }
-.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-.mobile-menu { position: fixed; inset: 0; z-index: 99; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); display: none; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
-.mobile-menu.open { display: flex; }
-.mobile-menu a { color: var(--hd); font-size: 18px; font-weight: 500; cursor: pointer; }
-.mobile-menu a:hover { color: var(--ac); }
+/* Services Preview */
+.services-preview { padding: 6rem 2rem; background: var(--bg-light); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.service-card { background: white; border-radius: 12px; padding: 2rem; border: 1px solid var(--border); transition: all 0.3s ease; }
+.service-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+.service-icon { width: 48px; height: 48px; background: rgba(37, 99, 235, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--primary); }
+.service-card h4 { font-size: 1.1rem; font-weight: 600; color: var(--secondary); margin-bottom: 0.5rem; }
+.service-card p { font-size: 0.9rem; color: var(--text-gray); line-height: 1.6; }
+
+/* CTA Section */
+.cta-section { background: linear-gradient(135deg, var(--secondary) 0%, #1e3a5f 100%); padding: 5rem 2rem; text-align: center; }
+.cta-section h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+.cta-section p { color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; max-width: 550px; margin: 0 auto 2rem; }
+.cta-btn { display: inline-block; background: var(--primary); color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+.cta-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
 /* Footer */
-.footer { padding: 52px 0 36px; border-top: 1px solid var(--bdr); background: #0f172a; color: #94a3b8; }
-.footer a { color: #94a3b8; transition: color 0.2s; }
-.footer a:hover { color: #60a5fa; }
+footer { background: #0a0f1a; padding: 4rem 2rem 2rem; color: rgba(255, 255, 255, 0.7); }
+.footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 300px; margin-top: 1rem; }
+.footer-col h4 { color: white; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 1px; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.75rem; }
+.footer-col a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
+.footer-bottom a { color: rgba(255, 255, 255, 0.5); text-decoration: none; margin-left: 1.5rem; }
+.footer-bottom a:hover { color: var(--accent); }
 
-.schip { display: flex; align-items: center; gap: 16px; padding: 20px 22px; border-radius: 8px; border: 1px solid var(--bdr); background: var(--bg2); transition: all 0.25s ease; }
-.schip:hover { border-color: var(--bdrH); }
+/* Mobile Menu */
+.mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: white; padding: 1rem 2rem 2rem; border-bottom: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); }
+.mobile-menu.active { display: block; }
+.mobile-menu a { display: block; padding: 0.75rem 0; color: var(--text-dark); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--border); }
+.mobile-menu a:last-child { border-bottom: none; }
 
-.proj-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--bdr); }
-.proj-row:hover { padding-left: 6px; transition: padding-left 0.25s; }
-
-.cap-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--bdr); }
-
-.pcard { background: var(--bg2); border: 1px solid var(--bdr); border-radius: 8px; padding: 24px 16px; text-align: center; transition: all 0.25s ease; }
-.pcard:hover { border-color: var(--bdrH); }
-
-.section-img { width: 100%; height: 280px; object-fit: cover; border-radius: 10px; }
-.section-img-large { width: 100%; height: 400px; object-fit: cover; border-radius: 10px; margin-top: 20px; }
-
-.advantage-card { background: var(--bg2); border: 1px solid var(--bdr); border-radius: 10px; padding: 28px; }
-.advantage-card:hover { border-color: var(--bdrH); }
-
-@media (max-width: 900px) { .hamburger { display: block; } .desk-nav { display: none !important; } }
-@media (max-width: 768px) { .container { padding: 0 28px; } .grid-2 { grid-template-columns: 1fr !important; } .grid-3 { grid-template-columns: 1fr !important; } .foot-grid { grid-template-columns: 1fr !important; text-align: center; } .section-img { height: 200px; } }
+/* Responsive */
+@media (max-width: 968px) {
+  .desk-nav { display: none; }
+  .mobile-toggle { display: block; }
+  .stats-container { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .footer-container { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .nav-container { padding: 0 1rem; }
+  .hero { padding: 7rem 1rem 3rem; }
+  .stats-container { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .stat-item h3 { font-size: 2rem; }
+  .why-section { padding: 4rem 1rem; }
+  .services-preview { padding: 4rem 1rem; }
+  .cta-section { padding: 3rem 1rem; }
+  .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .footer-bottom div { order: 1; }
+  .footer-bottom span { order: 2; }
+  .footer-bottom a { margin: 0 0.75rem; }
+}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav" id="navbar">
-  <div class="container" style="padding-top:14px;padding-bottom:14px;display:flex;align-items:center;justify-content:space-between">
-    <a href="index.html" style="display:flex;align-items:center;gap:12px">
-      <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
-        <rect x="2" y="13" width="28" height="6" rx="2" fill="#2563eb" opacity=".85"/>
-        <rect x="7" y="4" width="5" height="24" rx="2" fill="#2563eb" opacity=".35"/>
-        <rect x="20" y="4" width="5" height="24" rx="2" fill="#2563eb" opacity=".35"/>
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 60 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="12" width="6" height="20" rx="1" fill="#2563eb"/>
+        <rect x="46" y="12" width="6" height="20" rx="1" fill="#2563eb"/>
+        <rect x="20" y="18" width="4" height="14" rx="1" fill="#3b82f6"/>
+        <rect x="36" y="18" width="4" height="14" rx="1" fill="#3b82f6"/>
+        <rect x="6" y="16" width="48" height="3" rx="1" fill="#1e3a5f"/>
+        <rect x="6" y="11" width="48" height="3" rx="1" fill="#1e3a5f"/>
+        <circle cx="30" cy="7" r="4" fill="#2563eb"/>
+        <circle cx="30" cy="7" r="2" fill="#60a5fa"/>
       </svg>
-      <div>
-        <div style="font-weight:700;font-size:20px;color:var(--hd);line-height:1.05;letter-spacing:.2px">Grid Bridge</div>
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:3.2px;color:var(--ac);text-transform:uppercase">Solutions</div>
-      </div>
+      <div class="logo-text">Grid Bridge Solutions<span>Power System Modelling</span></div>
     </a>
-    <div class="desk-nav" style="display:flex;align-items:center;gap:28px">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="expertise.html" class="nav-link">Expertise</a>
-      <a href="sectors.html" class="nav-link">Sectors</a>
-      <a href="projects.html" class="nav-link">Projects</a>
-      <a href="contact.html" class="btn btn-outline btn-sm">Contact</a>
+    <div class="desk-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="expertise.html">Expertise</a>
+      <a href="sectors.html">Sectors</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <button class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="expertise.html">Expertise</a>
+    <a href="sectors.html">Sectors</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" onclick="toggleMenu()">Home</a>
-  <a href="services.html" onclick="toggleMenu()">Services</a>
-  <a href="expertise.html" onclick="toggleMenu()">Expertise</a>
-  <a href="sectors.html" onclick="toggleMenu()">Sectors</a>
-  <a href="projects.html" onclick="toggleMenu()">Projects</a>
-  <a href="contact.html" onclick="toggleMenu()">Contact</a>
-</div>
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">Power System Modelling & Simulation</span>
+    <h1>Specialist Power System Modelling for Grid-Connected Projects</h1>
+    <p>Grid Bridge Solutions delivers professional power system modelling and simulation services for renewable energy, BESS, and grid infrastructure projects across the UK and Europe.</p>
+    <div class="hero-buttons">
+      <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
+      <a href="services.html" class="btn btn-outline">Our Services</a>
+    </div>
+    <div class="image-placeholder">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>UK Power Network Infrastructure</span>
+    </div>
+  </div>
+</section>
 
-<!-- HERO SECTION -->
-<section style="padding: 140px 0 0; background: var(--bg); overflow: hidden;">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding-bottom: 80px;">
-      <div>
-        <div class="label" style="margin-bottom: 16px;"><span class="label-line"></span>Power System Modelling</div>
-        <h1 style="font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--hd); line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.5px;">Advanced Modelling & Simulation for Grid-Connected Projects</h1>
-        <p style="font-size: 16px; line-height: 1.85; color: var(--txM); margin-bottom: 30px;">Grid Bridge Solutions is a specialist UK consultancy delivering power system modelling and simulation services for renewable energy, BESS, and grid infrastructure projects.</p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 30px;">
-          <a href="contact.html" class="btn btn-primary">Discuss Your Project <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          <a href="services.html" class="btn btn-outline">Our Services</a>
+<section class="stats-bar">
+  <div class="stats-container">
+    <div class="stat-item"><h3>100+</h3><p>Projects Delivered</p></div>
+    <div class="stat-item"><h3>50+</h3><p>UK Grid Connections</p></div>
+    <div class="stat-item"><h3>10+</h3><p>Years Experience</p></div>
+    <div class="stat-item"><h3>4</h3><p>Major Platforms</p></div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-tag">Why Choose Us</span>
+      <h2 class="section-title">The Grid Bridge Advantage</h2>
+      <p class="section-subtitle">We bring deep expertise in power system simulation to deliver modelling solutions that meet the exacting standards of UK DNOs and TO.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
         </div>
-
+        <h3>OEM-Level Accuracy</h3>
+        <p>Simulation-ready controller models developed to DNO/TO standards, ensuring your projects meet National Grid requirements first time.</p>
       </div>
-      <div>
-        <img src="img1.png" alt="Power systems" style="width:100%;height:380px;object-fit:cover;border-radius:12px;box-shadow:0 20px 60px rgba(15,23,42,0.12);">
+      <div class="why-card">
+        <div class="why-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3>Rapid Turnaround</h3>
+        <p>Focused expertise means faster delivery without compromising quality. Standard projects completed within 2-4 weeks.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3>Full Documentation</h3>
+        <p>Comprehensive reports and model documentation provided with every project, structured for easy review and future handover.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <h3>Direct Expert Access</h3>
+        <p>Work directly with senior engineers throughout your project—no account managers, just dedicated technical expertise.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY GRID BRIDGE -->
-<section class="section" style="padding-top: 80px;">
-  <div class="container">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-      <div>
-        <div class="label" style="margin-bottom: 16px;"><span class="label-line"></span>Our Approach</div>
-        <h2 style="font-size: clamp(25px, 3vw, 38px); font-weight: 700; color: var(--hd); line-height: 1.2; margin-bottom: 16px;">Why Grid Bridge Solutions</h2>
-        <p style="font-size: 15px; line-height: 1.85; color: var(--txM); margin-bottom: 28px;">We are not a general consultancy that offers modelling as one of many services. Simulation and power system modelling is our entire focus.</p>
-        
-        <div style="display:flex;gap:10px;margin-bottom:16px;align-items:flex-start">
-          <div style="width:32px;height:32px;border-radius:50%;background:var(--acDim);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div>
-            <div style="font-size:14px;font-weight:600;color:var(--hd);margin-bottom:3px">Specialist Focus</div>
-            <div style="font-size:13.5px;color:var(--txM)">Every project we take on is a modelling or simulation project.</div>
-          </div>
+<section class="services-preview">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-tag">What We Do</span>
+      <h2 class="section-title">Our Core Services</h2>
+      <p class="section-subtitle">Comprehensive power system modelling services tailored to the UK energy sector.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
-        
-        <div style="display:flex;gap:10px;margin-bottom:16px;align-items:flex-start">
-          <div style="width:32px;height:32px;border-radius:50%;background:var(--acDim);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div>
-            <div style="font-size:14px;font-weight:600;color:var(--hd);margin-bottom:3px">Multi-Platform Expertise</div>
-            <div style="font-size:13.5px;color:var(--txM)">Working across PowerFactory, PSCAD, PSS®E, and CDEGS.</div>
-          </div>
-        </div>
-        
-        <div style="display:flex;gap:10px;margin-bottom:16px;align-items:flex-start">
-          <div style="width:32px;height:32px;border-radius:50%;background:var(--acDim);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div>
-            <div style="font-size:14px;font-weight:600;color:var(--hd);margin-bottom:3px">OEM-Level Model Development</div>
-            <div style="font-size:13.5px;color:var(--txM)">Simulation-ready controller models to DNO/TO standard.</div>
-          </div>
-        </div>
-        
-        <div style="display:flex;gap:10px;align-items:flex-start">
-          <div style="width:32px;height:32px;border-radius:50%;background:var(--acDim);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div>
-            <div style="font-size:14px;font-weight:600;color:var(--hd);margin-bottom:3px">Transparent Deliverables</div>
-            <div style="font-size:13.5px;color:var(--txM)">Reports and models structured for review and handover.</div>
-          </div>
-        </div>
-        
+        <h4>Power System Studies</h4>
+        <p>Load flow, fault analysis, protection coordination, and power quality assessment for grid connections.</p>
       </div>
-      <div>
-        <img src="img2.png" alt="Our approach" class="section-img" style="height:340px;">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+        </div>
+        <h4>BESS Modelling</h4>
+        <p>Grid-forming inverter models, frequency response studies, and battery storage simulation.</p>
       </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+        </div>
+        <h4>Renewable Energy</h4>
+        <p>Wind and solar farm modelling with accurate converter and control system representation.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="services.html" class="btn btn-primary">View All Services</a>
     </div>
   </div>
 </section>
 
+<section class="cta-section">
+  <h2>Ready to Start Your Project?</h2>
+  <p>Contact us to discuss your power system modelling requirements and receive a tailored proposal.</p>
+  <a href="contact.html" class="cta-btn">Get in Touch</a>
+</section>
 
-
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="foot-grid" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-bottom:40px">
-      <div>
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-          <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#2563eb"/><path d="M8 16L14 10L20 16L26 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 22L14 16L20 22L26 16" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg>
-          <span style="font-weight:700;font-size:15px;color:#fff">Grid Bridge Solutions</span>
-        </div>
-        <p style="font-size:14px;line-height:1.7;color:#94a3b8;max-width:280px">Specialist power system modelling and simulation services for the UK energy sector.</p>
-      </div>
-      <div>
-        <h4 style="font-size:11px;font-family:var(--mono);letter-spacing:2px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:16px">Navigation</h4>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <a href="index.html" style="font-size:14px;color:#94a3b8">Home</a>
-          <a href="services.html" style="font-size:14px;color:#94a3b8">Services</a>
-          <a href="expertise.html" style="font-size:14px;color:#94a3b8">Expertise</a>
-          <a href="sectors.html" style="font-size:14px;color:#94a3b8">Sectors</a>
-          <a href="projects.html" style="font-size:14px;color:#94a3b8">Projects</a>
-          <a href="contact.html" style="font-size:14px;color:#94a3b8">Contact</a>
-        </div>
-      </div>
-      <div>
-        <h4 style="font-size:11px;font-family:var(--mono);letter-spacing:2px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:16px">Legal</h4>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <a href="privacy-policy.html" style="font-size:14px;color:#94a3b8">Privacy Policy</a>
-          <a href="terms.html" style="font-size:14px;color:#94a3b8">Terms of Service</a>
-          <a href="cookies.html" style="font-size:14px;color:#94a3b8">Cookies Policy</a>
-        </div>
-      </div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 60 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="12" width="6" height="20" rx="1" fill="#2563eb"/>
+          <rect x="46" y="12" width="6" height="20" rx="1" fill="#2563eb"/>
+          <rect x="20" y="18" width="4" height="14" rx="1" fill="#3b82f6"/>
+          <rect x="36" y="18" width="4" height="14" rx="1" fill="#3b82f6"/>
+          <rect x="6" y="16" width="48" height="3" rx="1" fill="#4b5563"/>
+          <rect x="6" y="11" width="48" height="3" rx="1" fill="#4b5563"/>
+          <circle cx="30" cy="7" r="4" fill="#2563eb"/>
+          <circle cx="30" cy="7" r="2" fill="#60a5fa"/>
+        </svg>
+        <div class="logo-text">Grid Bridge Solutions<span>Power System Modelling</span></div>
+      </a>
+      <p>Specialist power system modelling and simulation consultancy serving renewable energy and grid infrastructure projects.</p>
     </div>
-    <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:12px">
-      <span>© 2026 Grid Bridge Solutions. All rights reserved.</span>
-      <span style="color:#64748b">Registered in England and Wales</span>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="cookies.html">Cookie Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>07410 907860</li>
+        <li>info@gridbridgesolutions.co.uk</li>
+        <li>Manchester, UK</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Grid Bridge Solutions. All rights reserved.</span>
+    <div>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="cookies.html">Cookies</a>
     </div>
   </div>
 </footer>
 
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('active');
+}
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('active');
+  });
+});
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.desk-nav a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
+</script>
 </body>
 </html>

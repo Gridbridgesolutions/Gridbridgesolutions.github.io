@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Project Experience | Grid Bridge Solutions</title>
+<meta name="description" content="Grid Bridge Solutions has delivered over 100 power system modelling projects across renewable energy, battery storage, and grid infrastructure in the UK.">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 :root {
@@ -19,11 +20,14 @@ a { text-decoration: none; color: inherit; }
 
 .container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
 .section { padding: 100px 0; }
-.section-alt { background: var(--bg3); }
+.section-alt { background: var(--bg2); }
 
 .label { font-family: var(--mono); font-size: 11px; letter-spacing: 3.5px; color: var(--ac); text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
 .label-line { width: 24px; height: 1.5px; background: var(--ac); display: inline-block; }
 .heading { font-size: clamp(25px, 3vw, 36px); font-weight: 600; color: var(--hd); line-height: 1.28; margin-bottom: 14px; }
+.subheading { font-size: 18px; font-weight: 500; color: var(--hd); margin-bottom: 12px; }
+.body-text { font-size: 15.5px; line-height: 1.8; color: var(--txM); max-width: 580px; }
+.body-text-lg { font-size: 17px; line-height: 1.85; color: var(--txM); max-width: 720px; }
 
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 6px; font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 0.15px; cursor: pointer; transition: all 0.25s ease; border: none; text-decoration: none; }
 .btn-primary { background: var(--ac); color: #fff; }
@@ -32,8 +36,22 @@ a { text-decoration: none; color: inherit; }
 .btn-outline:hover { border-color: var(--ac); color: var(--ac); }
 .btn-sm { padding: 11px 22px; font-size: 14.5px; }
 
-.proj-row { display: flex; align-items: center; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--bdr); transition: padding-left 0.25s; }
-.proj-row:hover { padding-left: 6px; }
+.card { background: var(--bg2); border: 1px solid var(--bdr); border-radius: 10px; padding: 32px 28px; transition: all 0.3s ease; position: relative; }
+.card:hover { border-color: var(--bdrH); box-shadow: 0 6px 24px rgba(15,23,42,0.04); transform: translateY(-2px); }
+.card-number { position: absolute; top: 24px; right: 24px; font-size: 48px; font-weight: 700; color: var(--ac); opacity: 0.15; line-height: 1; }
+.card-icon { width: 48px; height: 48px; border-radius: 10px; background: var(--acDim); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--ac); }
+.card h3 { font-size: 20px; font-weight: 600; color: var(--hd); margin-bottom: 12px; }
+.card p { font-size: 14.5px; line-height: 1.8; color: var(--txM); margin-bottom: 16px; }
+.card ul { list-style: none; }
+.card li { font-size: 14px; color: var(--txM); padding: 6px 0; border-bottom: 1px solid var(--bdr); display: flex; align-items: center; gap: 10px; }
+.card li:last-child { border-bottom: none; }
+.card li::before { content: '→'; color: var(--ac); font-weight: 600; }
+
+.stat-box { text-align: center; padding: 32px 20px; background: var(--bg2); border-radius: 12px; border: 1px solid var(--bdr); }
+.stat-number { font-size: 42px; font-weight: 700; color: var(--ac); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 13px; color: var(--txM); font-weight: 500; }
+
+.proj-tag { display: inline-block; background: var(--acDim); color: var(--ac); padding: 4px 12px; border-radius: 50px; font-size: 12px; font-weight: 600; margin-bottom: 12px; }
 
 /* Nav */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all 0.3s ease; background: rgba(245,246,248,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid transparent; }
@@ -57,8 +75,16 @@ a { text-decoration: none; color: inherit; }
 .footer a { color: #94a3b8; transition: color 0.2s; }
 .footer a:hover { color: #60a5fa; }
 
-@media (max-width: 900px) { .hamburger { display: block; } .desk-nav { display: none !important; } }
-@media (max-width: 768px) { .container { padding: 0 28px; } .foot-grid { grid-template-columns: 1fr !important; text-align: center; } }
+.image-placeholder { width: 100%; height: 280px; border-radius: 12px; background: linear-gradient(135deg, #064e3b 0%, #059669 50%, #34d399 100%); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white; font-size: 14px; margin-bottom: 40px; }
+.image-placeholder span { font-size: 12px; opacity: 0.8; margin-top: 8px; }
+
+.process-step { display: flex; gap: 24px; padding: 28px; background: var(--bg2); border-radius: 12px; border: 1px solid var(--bdr); }
+.step-number { font-size: 36px; font-weight: 700; color: var(--ac); line-height: 1; flex-shrink: 0; width: 50px; }
+.step-content h4 { font-size: 17px; font-weight: 600; color: var(--hd); margin-bottom: 8px; }
+.step-content p { font-size: 14px; line-height: 1.75; color: var(--txM); }
+
+@media (max-width: 900px) { .hamburger { display: block; } .desk-nav { display: none !important; } .grid-2 { grid-template-columns: 1fr !important; } .process-step { flex-direction: column; } }
+@media (max-width: 768px) { .container { padding: 0 28px; } .section { padding: 60px 0; } .foot-grid { grid-template-columns: 1fr !important; text-align: center; } }
 </style>
 </head>
 <body>
@@ -100,12 +126,13 @@ a { text-decoration: none; color: inherit; }
 </div>
 
 <!-- HERO SECTION -->
-<section style="padding: 180px 0 100px; background: var(--bg);">
+<section style="padding: 180px 0 80px; background: var(--bg);">
   <div class="container">
     <div style="max-width: 800px;">
-      <div class="label" style="margin-bottom: 20px;"><span class="label-line"></span>Project Experience</div>
-      <h1 style="font-size: clamp(32px, 4vw, 52px); font-weight: 700; color: var(--hd); line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.5px;">Types of Work We Deliver</h1>
-      <p style="font-size: 17px; line-height: 1.85; color: var(--txM); max-width: 680px; margin-bottom: 30px;">Our project experience spans the full range of power system modelling and simulation requirements — from early-stage feasibility through to detailed design and grid code compliance.</p>
+      <div class="label" style="margin-bottom: 20px;"><span class="label-line"></span>Our Track Record</div>
+      <h1 style="font-size: clamp(32px, 4vw, 52px); font-weight: 700; color: var(--hd); line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.5px;">Project Experience</h1>
+      <p style="font-size: 18px; line-height: 1.85; color: var(--txM); max-width: 720px; margin-bottom: 20px;">Over 100 completed projects across the UK energy sector, from small-scale residential developments to multi-GW offshore wind connections.</p>
+      <p style="font-size: 15.5px; line-height: 1.8; color: var(--txM); max-width: 680px; margin-bottom: 30px;">Every project is delivered with the same attention to technical quality, regardless of size or complexity.</p>
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
         <a href="contact.html" class="btn btn-primary">Discuss Your Project <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         <a href="sectors.html" class="btn btn-outline">View Sectors</a>
@@ -114,61 +141,207 @@ a { text-decoration: none; color: inherit; }
   </div>
 </section>
 
-<!-- PROJECT LIST -->
-<section class="section">
+<!-- STATS -->
+<section style="padding: 0 0 80px; background: var(--bg);">
   <div class="container">
-    <div style="max-width: 800px;">
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div class="stat-box">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">5GW+</div>
+        <div class="stat-label">Generation Modelled</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Grid Connections</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Years Combined Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<div class="container">
+  <div class="image-placeholder">
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+    <span>UK Renewable Energy Infrastructure</span>
+  </div>
+</div>
+
+<!-- PROJECT TYPES -->
+<section class="section-alt" style="padding: 80px 0;">
+  <div class="container">
+    <div style="max-width: 700px; margin-bottom: 50px;">
+      <div class="label" style="margin-bottom: 16px;"><span class="label-line"></span>What We Do</div>
+      <h2 class="heading" style="font-size: clamp(28px, 3.5vw, 40px);">Types of Projects</h2>
+      <p class="body-text-lg">From initial feasibility through to post-connection compliance, we support projects at every stage of the development lifecycle.</p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
       
-      <div class="proj-row">
-        <span style="font-family: var(--mono); font-size: 11px; color: var(--ac); width: 28px; flex-shrink: 0;">01</span>
-        <span style="font-size: 14.5px; color: var(--hd);">Grid connection feasibility studies</span>
+      <!-- Project Type 1 -->
+      <div class="card">
+        <div class="card-number">01</div>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <span class="proj-tag">Renewable Energy</span>
+        <h3>Wind Farm Connection Studies</h3>
+        <p>Comprehensive technical assessment for onshore and offshore wind farm connections to the UK transmission and distribution networks.</p>
+        <ul>
+          <li>Full scope connection application studies</li>
+          <li>Grid code compliance (ERC/1, ERC/2, P28)</li>
+          <li>Fault ride-through and protection studies</li>
+          <li>Power system stabiliser design and tuning</li>
+          <li>Collector network and cable rating studies</li>
+          <li>Connection offer review and negotiation</li>
+        </ul>
       </div>
       
-      <div class="proj-row">
-        <span style="font-family: var(--mono); font-size: 11px; color: var(--ac); width: 28px; flex-shrink: 0;">02</span>
-        <span style="font-size: 14.5px; color: var(--hd);">G99 / G100 compliance assessments</span>
+      <!-- Project Type 2 -->
+      <div class="card">
+        <div class="card-number">02</div>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="5" y1="10" x2="5" y2="14"/><line x1="9" y1="10" x2="9" y2="14"/><line x1="13" y1="10" x2="13" y2="14"/></svg>
+        </div>
+        <span class="proj-tag">Energy Storage</span>
+        <h3>Battery Storage Modelling</h3>
+        <p>Detailed modelling and simulation for BESS projects, from feasibility through to operational optimisation and services provision.</p>
+        <ul>
+          <li>Grid-forming inverter modelling and validation</li>
+          <li>Frequency response services (FFR, DMS, BM Participation)</li>
+          <li>Synthetic inertia and RoCoF studies</li>
+          <li>Black start capability assessment</li>
+          <li>Capacity Market and Balancing Mechanism studies</li>
+          <li>Long-duration storage assessment</li>
+        </ul>
       </div>
       
-      <div class="proj-row">
-        <span style="font-family: var(--mono); font-size: 11px; color: var(--ac); width: 28px; flex-shrink: 0;">03</span>
-        <span style="font-size: 14.5px; color: var(--hd);">EMT simulation for inverter-dominated networks</span>
+      <!-- Project Type 3 -->
+      <div class="card">
+        <div class="card-number">03</div>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/></svg>
+        </div>
+        <span class="proj-tag">Solar Energy</span>
+        <h3>Solar Farm Technical Studies</h3>
+        <p>Technical assessment for utility-scale solar PV connections, including G99 compliance and power quality verification.</p>
+        <ul>
+          <li>LV and HV connection studies</li>
+          <li>Inverter trip settings optimisation</li>
+          <li>Fault ride-through compliance studies</li>
+          <li>Power quality (harmonic, flicker, voltage) assessment</li>
+          <li>G99 application support and DNO liaison</li>
+          <li>Reactive power capability assessment</li>
+        </ul>
       </div>
       
-      <div class="proj-row">
-        <span style="font-family: var(--mono); font-size: 11px; color: var(--ac); width: 28px; flex-shrink: 0;">04</span>
-        <span style="font-size: 14.5px; color: var(--hd);">Harmonic assessment and filter design</span>
+      <!-- Project Type 4 -->
+      <div class="card">
+        <div class="card-number">04</div>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M5 20V8l5-4v4l5-4v4l5-4v12H5z"/></svg>
+        </div>
+        <span class="proj-tag">Industrial</span>
+        <h3>Industrial Connection Studies</h3>
+        <p>Technical assessment for large industrial loads, on-site generation, and grid connection upgrades.</p>
+        <ul>
+          <li>Industrial site connection offers</li>
+          <li>On-site CHP and generator modelling</li>
+          <li>Network capacity and reinforcement studies</li>
+          <li>Power factor correction and harmonics</li>
+          <li>Standby generator and UPS assessment</li>
+          <li>Emissions and grid code compliance</li>
+        </ul>
       </div>
       
-      <div class="proj-row">
-        <span style="font-family: var(--mono); font-size: 11px; color: var(--ac); width: 28px; flex-shrink: 0;">05</span>
-        <span style="font-size: 14.5px; color: var(--hd);">STATCOM and reactive compensation studies</span>
+      <!-- Project Type 5 -->
+      <div class="card">
+        <div class="card-number">05</div>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <span class="proj-tag">Transmission</span>
+        <h3>Grid Infrastructure Assessment</h3>
+        <p>Technical studies for transmission network connections, reinforcements, and infrastructure projects.</p>
+        <ul>
+          <li>National Grid connection application support</li>
+          <li>Network reinforcement optioneering</li>
+          <li>Short circuit level assessment</li>
+          <li>Protection coordination studies</li>
+          <li>System boundary and operability studies</li>
+          <li>HVDC and FACTS modelling</li>
+        </ul>
       </div>
       
-      <div class="proj-row">
-        <span style="font-family: var(--mono); font-size: 11px; color: var(--ac); width: 28px; flex-shrink: 0;">06</span>
-        <span style="font-size: 14.5px; color: var(--hd);">BESS dynamic modelling and frequency response analysis</span>
-      </div>
-      
-      <div class="proj-row">
-        <span style="font-family: var(--mono); font-size: 11px; color: var(--ac); width: 28px; flex-shrink: 0;">07</span>
-        <span style="font-size: 14.5px; color: var(--hd);">Earthing design and lightning risk assessment (BS EN 62305)</span>
-      </div>
-      
-      <div class="proj-row">
-        <span style="font-family: var(--mono); font-size: 11px; color: var(--ac); width: 28px; flex-shrink: 0;">08</span>
-        <span style="font-size: 14.5px; color: var(--hd);">OEM inverter model development and validation</span>
+      <!-- Project Type 6 -->
+      <div class="card">
+        <div class="card-number">06</div>
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <span class="proj-tag">Model Validation</span>
+        <h3>OEM Model Development</h3>
+        <p>Development and validation of manufacturer-specific models for wind turbines, inverters, and storage systems.</p>
+        <ul>
+          <li>WTG manufacturer model development</li>
+          <li>Inverter and BESS controller modelling</li>
+          <li>Model validation against site measurements</li>
+          <li>DNO/TO model acceptance support</li>
+          <li>Generic model development and certification</li>
+          <li>Real code compliance verification</li>
+        </ul>
       </div>
       
     </div>
   </div>
 </section>
 
+<!-- HOW WE WORK -->
+<section class="section">
+  <div class="container">
+    <div style="max-width: 700px; margin-bottom: 50px;">
+      <div class="label" style="margin-bottom: 16px;"><span class="label-line"></span>How We Work</div>
+      <h2 class="heading" style="font-size: clamp(28px, 3.5vw, 40px);">Our Process</h2>
+      <p class="body-text-lg">Every project follows a structured approach, ensuring clarity at each stage and delivery of exactly what you need.</p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div class="process-step" style="flex-direction: column; text-align: center;">
+        <div style="font-size: 36px; font-weight: 700; color: var(--ac); margin-bottom: 12px;">1</div>
+        <h4 style="font-size: 16px; font-weight: 600; color: var(--hd); margin-bottom: 8px;">Scoping</h4>
+        <p style="font-size: 13px; line-height: 1.7; color: var(--txM);">We discuss your project requirements, timeline, and technical needs to define the exact scope.</p>
+      </div>
+      <div class="process-step" style="flex-direction: column; text-align: center;">
+        <div style="font-size: 36px; font-weight: 700; color: var(--ac); margin-bottom: 12px;">2</div>
+        <h4 style="font-size: 16px; font-weight: 600; color: var(--hd); margin-bottom: 8px;">Data Collection</h4>
+        <p style="font-size: 13px; line-height: 1.7; color: var(--txM);">We gather all required network and project data, asking the right questions upfront.</p>
+      </div>
+      <div class="process-step" style="flex-direction: column; text-align: center;">
+        <div style="font-size: 36px; font-weight: 700; color: var(--ac); margin-bottom: 12px;">3</div>
+        <h4 style="font-size: 16px; font-weight: 600; color: var(--hd); margin-bottom: 8px;">Modelling</h4>
+        <p style="font-size: 13px; line-height: 1.7; color: var(--txM);">We build and validate models, run studies, and analyse results to our exacting standards.</p>
+      </div>
+      <div class="process-step" style="flex-direction: column; text-align: center;">
+        <div style="font-size: 36px; font-weight: 700; color: var(--ac); margin-bottom: 12px;">4</div>
+        <h4 style="font-size: 16px; font-weight: 600; color: var(--hd); margin-bottom: 8px;">Delivery</h4>
+        <p style="font-size: 13px; line-height: 1.7; color: var(--txM);">Clear technical reports with actionable findings, plus ongoing support as needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BAND -->
-<section style="padding: 80px 0; background: var(--bg3);">
+<section style="padding: 80px 0; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);">
   <div class="container" style="text-align: center;">
-    <h2 style="font-size: clamp(24px, 3vw, 36px); font-weight: 600; color: var(--hd); margin-bottom: 16px;">Ready to discuss your next project?</h2>
-    <p style="font-size: 16px; line-height: 1.8; color: var(--txM); max-width: 600px; margin: 0 auto 30px;">Whether you need a standalone study, ongoing modelling support, or a second opinion on an existing model — we are here to help.</p>
-    <a href="contact.html" class="btn btn-primary">Get in Touch <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <h2 style="font-size: clamp(24px, 3vw, 36px); font-weight: 600; color: white; margin-bottom: 16px;">Ready to discuss your next project?</h2>
+    <p style="font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto 30px;">We're experienced with projects of all sizes, from single-turbine wind farms to multi-GW offshore developments. Let's talk about what you need.</p>
+    <a href="contact.html" class="btn btn-primary" style="background: white; color: var(--ac);">Get in Touch <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
   </div>
 </section>
 
@@ -193,7 +366,7 @@ a { text-decoration: none; color: inherit; }
       </div>
       <div>
         <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 2px; color: #60a5fa; text-transform: uppercase; margin-bottom: 14px;">Contact</div>
-        <p style="font-size: 13px; line-height: 1.8">info@gridbridgesolutions.co.uk<br>+44 (0) 161 000 0000<br>Manchester, UK</p>
+        <p style="font-size: 13px; line-height: 1.8">07410 907860<br>info@gridbridgesolutions.co.uk<br>Manchester, UK</p>
       </div>
     </div>
     <div style="border-top: 1px solid rgba(255,255,255,0.07); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
